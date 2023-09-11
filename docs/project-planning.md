@@ -14,7 +14,7 @@ This application will apply to anyone looking for an easier way to organize all 
   3. What is the purpose of my application? See definition statement above.
   4. What business problem or real world problem am I going to be solved? See definition statement above.
   5. Define the attributes of your website:
-  * Color Pallette: #54C6EB – rgb(84, 198, 235) and #610345 – rgb(97, 3, 69)
+    * Color Pallette: #54C6EB – rgb(84, 198, 235) and #610345 – rgb(97, 3, 69)
     * Images:
     * Fonts: All page headers – Anton, Page text content – Merriweather Sans
     * Navigation: Nav links on each page. Top right traditional style for mobile, and left sidebar for desktop.
