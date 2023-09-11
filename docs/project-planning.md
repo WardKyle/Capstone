@@ -14,19 +14,20 @@ This application will apply to anyone looking for an easier way to organize all 
   3. What is the purpose of my application? See definition statement above.
   4. What business problem or real world problem am I going to be solved? See definition statement above.
   5. Define the attributes of your website:
-    - Color Pallette: #54C6EB – rgb(84, 198, 235) and #610345 – rgb(97, 3, 69)
-    - Images:
-    - Fonts: All page headers – Anton, Page text content – Merriweather Sans
-    - Logos: ![PassLockr](./Logos/PassLockr.png);
-    - Navigation: Nav links on each page. Top right traditional style for mobile, and left sidebar for desktop.
+    * Color Pallette: #54C6EB – rgb(84, 198, 235) and #610345 – rgb(97, 3, 69)
+    * Images:
+    * Fonts: All page headers – Anton, Page text content – Merriweather Sans
+    * Navigation: Nav links on each page. Top right traditional style for mobile, and left sidebar for desktop.
+    * Logos:
+    * ![PassLockr](./Logos/PassLockr.png);
   6. Mural story map: https://app.mural.co/t/savvy5917/m/savvy5917/1692926334627/81e72d375dc6e59312dc2256a15cd169c66e7011?sender=ue7acfc251940e42b14b72930
   7. Research the following:
-    - List of Applications Researched:
+    * List of Applications Researched:
         NordPass
         RoboForm
         Keeper
         1Password
-    - List what you like about these applications:
+    * List what you like about these applications:
         Forgot password reset functionality
         Useable on any device
         Unlimited passwords
@@ -34,13 +35,13 @@ This application will apply to anyone looking for an easier way to organize all 
         Multifactor authentication
         Ability to share items with anyone you'd like
         One click login
-    - List what you do not like about these applications:
+    * List what you do not like about these applications:
         Pop-ups
         Over-complicated website / info distribution
         For some it was hard to actually find access to the app
         Price-lead advertising vs functionality / uses / benefits
         Account creation required immediately at the home page
-    - How my application will be different:
+    * How my application will be different:
         It will have a much simpler UI, and will be free!
   8. Create wireframes and provide like for each page: https://app.diagrams.net/#G1Aik3_ktk5XXf4R9YCpE6d26U3vu6x52W
   9. Create and provide link to User Flow Diagram: See previous link to the wireframes.
