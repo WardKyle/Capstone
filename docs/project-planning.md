@@ -17,7 +17,7 @@ This application will apply to anyone looking for an easier way to organize all 
     - Color Pallette: #54C6EB – rgb(84, 198, 235) and #610345 – rgb(97, 3, 69)
     - Images:
     - Fonts: All page headers – Anton, Page text content – Merriweather Sans
-    - Logos: [PassLockr](./Logos/PassLockr.png);
+    - Logos: ![PassLockr](./Logos/PassLockr.png);
     - Navigation: Nav links on each page. Top right traditional style for mobile, and left sidebar for desktop.
   6. Mural story map: https://app.mural.co/t/savvy5917/m/savvy5917/1692926334627/81e72d375dc6e59312dc2256a15cd169c66e7011?sender=ue7acfc251940e42b14b72930
   7. Research the following:
