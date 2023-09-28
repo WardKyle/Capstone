@@ -33,8 +33,79 @@ header {
   background-position: 0px 5px;
   z-index: 2;
 }
-.homepage {
+.homepage, .contact {
   padding-top: 50px;
+}
+.contact .top_left {
+  height: 150px;
+  justify-content: end;
+}
+.contact #firstSection > p {
+  width: 100%;
+  text-align: center;
+  min-height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#contact_options {
+  min-height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+}
+.options {
+  min-height: 200px;
+  width: 75%;
+  margin: 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px 0px rgb(var(--mainMaroonColor));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.options .row1 {
+  padding: 0px 10px;
+  width: 100%;
+  font-weight: bold;
+  font-size: 18px
+}
+.options p {
+  padding: 10px 10px 5px 10px;
+  font-size: 12px;
+}
+.options .contactButton a {
+  text-decoration: none;
+  color: white;
+}
+.options .contactButton {
+  margin: 5px 10px;
+  padding: 7px;
+  max-width: 120px;
+  background-color: rgb(var(--mainMaroonColor));
+  border-radius: 10px;
+  text-align: center;
+}
+.fa-building, .fa-lightbulb, .fa-circle-question, .fa-handshake {
+  padding-right: 20px;
+  left: -41%;
+  top: 130px;
+  font-size: 30px;
+  position: relative;
+  color: rgb(var(--mainLightBlueColor))
+}
+.contact .row_col:nth-child(2) {
+  background-image: url('./docs/Logos/Profile.jpg');
+  background-size: auto 90%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.contact .bottom_right {
+  min-height: 300px;
+  height: auto;
+  font-weight: normal;
+  padding-right: 15px;
 }
 #firstSection. #thirdSection {
   background-color: white;
@@ -173,17 +244,11 @@ footer p, footer a {
   position: relative;
 }
 #slide1, #slide2, #slide3 {
-  animation: slider 7s infinite ease-out;
   width:100%;
   font-weight: bold;
-  /* background-color: white;
-  height: 350px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  font-weight: bold;
-  width: 50%;
-  border-radius: 50%; */
+}
+.playSlider{
+  animation: slider 7000ms infinite ease-out;
 }
 @keyframes slider {
   0% {
@@ -219,5 +284,20 @@ footer p, footer a {
   }
   #testimonials p {
     font-size: 30px;
+  }
+  #contact_options {
+    flex-direction: row;
+    padding-right: 20px;
+    padding-left: 0px;
+  }
+  .options {
+    min-height: 250px;
+    margin: 0px;
+    width: 100%
+  }
+  .fa-building, .fa-lightbulb, .fa-circle-question, .fa-handshake {
+    padding-right: 5px;
+    left: 2px;
+    top: 0;
   }
 }
