@@ -1,0 +1,223 @@
+:root {
+  --mainMaroonColor:97, 3, 69;
+  --mainLightBlueColor:84, 198, 235;
+  --headerFont: Anton, sans;
+  --contentFont: Merriweather Sans, sans;
+}
+* {
+  box-sizing: border-box;
+  font-size: 16px;
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+header {
+  height: 50px;
+  width: 100%;
+  background-color: rgba(var(--mainMaroonColor),1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: white;
+  padding-left: 50px;
+  font-size:2em;
+  line-height: 50px;
+  background-image: url(docs/Logos/PassLockr.png);
+  background-repeat: no-repeat;
+  background-size: auto 40px;
+  background-position: 0px 5px;
+  z-index: 2;
+}
+.homepage {
+  padding-top: 50px;
+}
+#firstSection. #thirdSection {
+  background-color: white;
+}
+#secondSection {
+  background-color: rgba(var(--mainLightBlueColor),0.3);
+}
+.fa-solid.fa-bars {
+  color: white;
+  float:right;
+  padding:15px;
+  font-size: 20px;
+}
+#firstSection, #secondSection, #thirdSection {
+  height: auto;
+  width:100%;
+}
+.top_left, .bottom_right, .doubleStack {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 2em;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+#firstSection .bottom_right {
+  flex: 1;
+}
+.doubleStack {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 2em;
+  justify-content: center;
+  flex-direction: row;
+  text-align: center;
+  flex: 1;
+}
+#firstSection .top_left, #secondSection .bottom_right {
+  flex: 2;
+}
+.row_col {
+  flex: 1;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-weight: bold;
+  border-bottom: 1px solid black
+}
+.row_col:first-child {
+  border-right: 1px solid black;
+}
+ol {
+  margin: auto;
+  padding: 10px;
+  text-align: left;
+}
+footer {
+  min-height: 270px;
+  height: auto;
+  background-color: #e2e2e2;
+  width: 100%;
+  display: flex;
+  margin-bottom: -5px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: rgb(var(--mainMaroonColor));
+  font-weight: normal;
+  padding: 30px 5px 30px 5px;
+}
+footer input, footer input:focus {
+  text-align: center;
+  border-radius: 50px;
+  border: none;
+  color: rgb(var(--mainMaroonColor));
+  width: 50%;
+  outline: none;
+}
+.col1, .col2, .col3, .col4, .col5 {
+  width: 100%;
+  text-align: center;
+  color: rgb(164, 182, 198);
+  padding-top: 5px;
+  padding-bottom: 2px;
+  }
+.col1, .col2, .col3, .col4 {
+flex: 1;
+}
+.col5 {
+  flex:2;
+}
+footer p, footer a {
+  text-align: center;
+  color: rgb(var(--mainMaroonColor));
+  font-weight: normal;
+  font-size: 12px;
+  text-decoration: none;
+}
+.copyright {
+  width: 100%;
+  background-color: darkgrey;
+  display: block;
+}
+.footer2 {
+  display: flex;
+  width: 100%;
+  height: auto;
+  background-color: rgb(164, 182, 198);
+}
+.footer2 .row_col {
+  font-size: 10px;
+  border: none;
+}
+#testimonials {
+  height: 300px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(97,3,69,1) 0%, rgba(255,255,255,1) 100%);
+}
+#testimonials p {
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+}
+#slide1, #slide2, #slide3 {
+  animation: slider 7s infinite ease-out;
+  width:100%;
+  font-weight: bold;
+  /* background-color: white;
+  height: 350px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  width: 50%;
+  border-radius: 50%; */
+}
+@keyframes slider {
+  0% {
+    color: transparent;
+  }
+  10% {
+    color:rgb(var(--mainLightBlueColor));
+  }
+  90% {
+    color: black;
+  }
+  100% {
+    color:transparent;
+  }
+}
+@media (min-width:800px){
+  #secondSection {
+    display: flex;
+  }
+
+  .doubleStack {
+    flex-direction: column;
+  }
+  .row_col {
+    border-right: 1px solid black;
+    border-bottom: none;
+  }
+  .row_col:first-child {
+    border-bottom: 1px solid black;
+  }
+  footer {
+    flex-direction: row;
+  }
+  #testimonials p {
+    font-size: 30px;
+  }
+}
