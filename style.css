@@ -107,13 +107,13 @@ header {
   font-weight: normal;
   padding-right: 15px;
 }
-#firstSection. #thirdSection {
+#firstSection, #thirdSection {
   background-color: white;
 }
 #secondSection {
   background-color: rgba(var(--mainLightBlueColor),0.3);
 }
-.fa-solid.fa-bars {
+.fa-solid.fa-bars, .fa-solid.fa-x {
   color: white;
   float:right;
   padding:15px;
@@ -250,6 +250,31 @@ footer p, footer a {
 .playSlider{
   animation: slider 7000ms infinite ease-out;
 }
+.navWindow {
+  height: calc(100% - 50px);
+  width: 100%;
+  background-color: black;
+  z-index: 3;
+  position: fixed;
+  top: 50px;
+  animation: fadeIn 0.4s ease-out;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.navLinks {
+  padding-bottom: 8px;
+}
+.navLinks a {
+  font-size: 40px;
+  text-decoration: none;
+  color: white;
+  padding-bottom: 7px;
+}
+.hide {
+  display: none !important;
+}
 @keyframes slider {
   0% {
     color: transparent;
@@ -262,6 +287,14 @@ footer p, footer a {
   }
   100% {
     color:transparent;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    background-color: transparent
+  }
+  100% {
+    background-color: black;
   }
 }
 @media (min-width:800px){

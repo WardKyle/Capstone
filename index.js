@@ -1,39 +1,35 @@
-const testimonial1 = document.querySelector("#slide1");
-const testimonial2 = document.querySelector("#slide2");
-const testimonial3 = document.querySelector("#slide3");
+import { Header, Nav, Main, Footer } from "./components";
+import * as store from "./store";
+import Navigo from "navigo";
+import { capitalize } from "lodash";
+import playSlider from "./utils/playSlider.js";
 
-// let job = null,
-//   origin = new Date().getTime();
-// const loop = () => {
-//   if (new Date().getTime() - 7000 > origin) {
-//     testimonial1.classList.remove("playSlider");
-//     let exchange3 = testimonial1.textContent;
-//     let exchange1 = testimonial2.textContent;
-//     let exchange2 = testimonial3.textContent;
-//     testimonial1.classList.add("playSlider");
-//     testimonial1.textContent = exchange1;
-//     testimonial2.textContent = exchange2;
-//     testimonial3.textContent = exchange3;
-//     origin = new Date().getTime();
-//     job = requestAnimationFrame(loop);
-//   } else {
-//     requestAnimationFrame(loop);
-//   }
-// };
-// requestAnimationFrame(loop);
+const router = new Navigo("/");
 
-let loop = () => {
-  void testimonial1.offsetWidth;
-  testimonial1.classList.add("playSlider");
-  setTimeout(function() {
-    testimonial1.classList.remove("playSlider");
-    let exchange3 = testimonial1.textContent;
-    let exchange1 = testimonial2.textContent;
-    let exchange2 = testimonial3.textContent;
-    testimonial1.textContent = exchange1;
-    testimonial2.textContent = exchange2;
-    testimonial3.textContent = exchange3;
-    loop();
-  }, "7000");
-};
-loop();
+function render(state = store.Home) {
+  document.querySelector("#root").innerHTML = `
+  ${Header(state)}
+  ${Nav(store.Links)}
+  ${Main(state)}
+  ${Footer()}
+  `;
+  router.updatePageLinks();
+  if (state == store.Home) {
+    playSlider();
+  }
+}
+
+router
+  .on({
+    "/": () => render(),
+    ":view": params => {
+      let view = capitalize(params.data.view);
+      if (view in store) {
+        render(store[view]);
+      } else {
+        render(store.Viewnotfound);
+        console.log(`View ${view} not defined`);
+      }
+    }
+  })
+  .resolve();
