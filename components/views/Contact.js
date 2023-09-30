@@ -60,7 +60,7 @@ export default () => html`
       <div class="bottom_right">
         Sparked by Savvy Coders, the idea for PassLockr was conceptualized
         through the need of a capstone for cohort completion. His ever-growing
-        list of passwords, "organized" in a iPhone note, was getting out of
+        list of passwords, "organized" in an iPhone note, was getting out of
         hand. It was time for a change, and PassLockr was born.
       </div>
     </section>
