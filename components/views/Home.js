@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default state => html`
+export default () => html`
   <section class="homepage">
     <section id="firstSection">
       <div class="top_left">Password Management Has Never Been So Simple</div>

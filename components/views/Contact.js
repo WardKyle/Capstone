@@ -1,6 +1,6 @@
 import html from "html-literal";
 
-export default state => html`
+export default () => html`
   <section class="contact">
     <section id="firstSection">
       <div class="top_left">Contact Us</div>
