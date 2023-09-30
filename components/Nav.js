@@ -11,7 +11,7 @@ export default (links, state) => {
             link =>
               `<div class="navLinks"><a href="/${link.title}" title="${link.title}" data-navigo">${link.text}</a></div>`
           )
-          .join("")};
+          .join("")}
       </nav>
     `;
   }
