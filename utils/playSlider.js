@@ -15,7 +15,7 @@ export default function playSlider() {
       testimonial2.textContent = exchange2;
       testimonial3.textContent = exchange3;
       loop();
-    }, "7000");
+    }, "6000");
   };
   loop();
 }
