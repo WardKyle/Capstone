@@ -3,7 +3,8 @@ export default function toggleNav() {
   const faX = document.querySelector(".fa-solid.fa-x");
   const hdr = document.querySelector("header");
   const navColor = "rgba(164, 182, 198, 0.95)";
-  const mainRed = "rgb(var(--mainMaroonColor))";
+  const bgColor = "white";
+  const fontColor = "black";
 
   document.querySelector("nav").classList.toggle("navWindow");
 
@@ -20,11 +21,14 @@ export default function toggleNav() {
     hdr.style.color = "transparent";
     hdr.style.backgroundColor = navColor;
     hdr.style.backgroundPosition = "50% 5px";
-    hdr.style.transition = "background-position 0.2s ease-out";
+    hdr.style.transition =
+      "background-position 0.6s ease-out, background-blend-mode 0.6s ease-out";
+    hdr.style.backgroundBlendMode = "soft-light";
   } else {
-    hdr.style.color = "white";
-    hdr.style.backgroundColor = mainRed;
-    hdr.style.backgroundPosition = "0 5px";
+    hdr.style.color = fontColor;
+    hdr.style.backgroundColor = bgColor;
+    hdr.style.backgroundPosition = "2px 5px";
     hdr.style.transition = "none";
+    hdr.style.backgroundBlendMode = "normal";
   }
 }

@@ -10,6 +10,6 @@ export default () => html`
     /></a>
     <h1>Welcome to PassLockr</h1>
     <div id="signIn">Sign In</div>
-    <div id="forgotPassword">Forgot Password?</div>
+    <div id="forgotPassword">Forgot Password</div>
   </section>
 `;

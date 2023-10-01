@@ -1,14 +1,31 @@
 :root {
   --mainMaroonColor:97, 3, 69;
   --mainLightBlueColor:84, 198, 235;
-  --headerFont: Anton, sans;
-  --contentFont: Merriweather Sans, sans;
+}
+@font-face{
+  font-family: "Gabarito";
+  src: url("./fonts/Gabarito-VariableFont_wght.ttf") format("truetype");
+}
+@font-face{
+  font-family: "Outfit";
+  src: url("./fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+}
+@font-face{
+  font-family: "Tenor Sans";
+  src: url("./fonts/TenorSans-Regular.ttf") format("truetype");
 }
 * {
   box-sizing: border-box;
   font-size: 16px;
   margin: 0px;
   padding: 0px;
+  font-family: Outfit;
+}
+li, .footer2 .row_col {
+  font-family: Tenor Sans;
+}
+p {
+  font-family: Gabarito;
 }
 nav {
   display: none;
@@ -22,19 +39,20 @@ body {
 header {
   height: 50px;
   width: 100%;
-  background-color: rgba(var(--mainMaroonColor),1);
+  background-color: white;
   position: fixed;
   top: 0;
   left: 0;
-  color: white;
-  padding-left: 50px;
+  color: black;
+  padding-left: 70px;
   font-size:2em;
   line-height: 50px;
   background-image: url(docs/Logos/PassLockr.png);
   background-repeat: no-repeat;
   background-size: auto 40px;
-  background-position: 0px 5px;
+  background-position: 2px 5px;
   z-index: 2;
+  border-bottom: 2px solid #e2e2e2;
 }
 .homepage, .contact, .login {
   padding-top: 50px;
@@ -75,9 +93,10 @@ header {
   color: white;
 }
 .homeIcon {
-  width: 150px;
+  width: 200px;
   height: auto;
-  padding-bottom: 20px;
+  max-width: 100%;
+  padding-bottom: 80px;
 }
 .contact .top_left {
   height: 150px;
@@ -157,10 +176,10 @@ header {
   background-color: rgba(var(--mainLightBlueColor),0.3);
 }
 .fa-solid.fa-bars, .fa-solid.fa-x {
-  color: white;
   float:right;
   padding:15px;
   font-size: 20px;
+  color: black;
 }
 #firstSection, #secondSection, #thirdSection {
   height: auto;
