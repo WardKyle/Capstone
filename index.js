@@ -2,20 +2,23 @@ import { Header, Nav, Main, Footer } from "./components";
 import * as store from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
-import playSlider from "./utils/playSlider.js";
+import * as utils from "./utils";
 
 const router = new Navigo("/");
 
 function render(state = store.Home) {
-  document.querySelector("#root").innerHTML = `
-  ${Header(state)}
-  ${Nav(store.Links, state)}
-  ${Main(state)}
-  ${Footer()}
-  `;
+  let renderThis = `${Header(state)} ${Main(state)}
+  ${Footer()}`;
+  if (utils.hasAccess()) {
+    renderThis += `${Nav(store.fullLinks, state)}`;
+  } else {
+    renderThis += `${Nav(store.Links, state)}`;
+  }
+
+  document.querySelector("#root").innerHTML = renderThis;
   router.updatePageLinks();
   if (state == store.Home) {
-    playSlider();
+    utils.playSlider();
   }
 }
 

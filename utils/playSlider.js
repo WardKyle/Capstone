@@ -1,4 +1,4 @@
-export default function playSlider() {
+export function playSlider() {
   const testimonial1 = document.querySelector("#slide1");
   const testimonial2 = document.querySelector("#slide2");
   const testimonial3 = document.querySelector("#slide3");
