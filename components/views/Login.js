@@ -5,7 +5,7 @@ export default () => html`
     <a href="Home"
       ><img
         class="homeIcon"
-        src=".../docs/Logos/PassLockr.png"
+        src="https://passlockr-app.netlify.app/PassLockr.e345ff9a.png"
         alt="PassLockr Logo"
     /></a>
     <h1>Welcome to PassLockr</h1>
