@@ -5,7 +5,7 @@ export default () => html`
     <a href="Home"
       ><img
         class="homeIcon"
-        src="http://localhost:1234/PassLockr.0e0d1fb8.png"
+        src=".../docs/Logos/PassLockr.png"
         alt="PassLockr Logo"
     /></a>
     <h1>Welcome to PassLockr</h1>
