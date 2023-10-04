@@ -9,12 +9,9 @@ const router = new Navigo("/");
 function render(state = store.Home) {
   let renderThis = `${Header(state)} ${Main(state)}
   ${Footer()}`;
-  if (utils.hasAccess()) {
-    renderThis += `${Nav(store.fullLinks, state)}`;
-  } else {
-    renderThis += `${Nav(store.Links, state)}`;
-  }
-
+  utils.hasAccess()
+    ? (renderThis += `${Nav(store.fullLinks, state)}`)
+    : (renderThis += `${Nav(store.Links, state)}`);
   document.querySelector("#root").innerHTML = renderThis;
   router.updatePageLinks();
   if (state == store.Home) {

@@ -26,14 +26,14 @@ export default () => html`
     <section id="thirdSection">
       <div id="testimonials">
         <p id="slide1">
-          "PassLockr is the best password management yet!" -Anonymous
+          "PassLockr is the best password management product yet!" -Anonymous
         </p>
         <p id="slide2" style="display:none;">
           "I have already recommended their product to my entire family."
           -Anonymous
         </p>
         <p id="slide3" style="display:none;">
-          "Live. Saver. And not the sugar coated kind." -Anonymous
+          "Life. Saver. And not the sugar coated kind." -Anonymous
         </p>
       </div>
     </section>
