@@ -3,3 +3,4 @@
 export { hasAccess } from "./hasAccess";
 export { playSlider } from "./playSlider";
 export { homeAbstract } from "./homeAbstract";
+export { scrollDetect } from "./onScroll";

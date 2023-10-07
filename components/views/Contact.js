@@ -50,7 +50,7 @@ export default () => html`
               help make your life easier.
             </p>
             <div class="contactButton">
-              <a href="mailto: email@passlockr.com">Help</a>
+              <a href="mailto: email@passlockr-app.com">Help</a>
             </div>
           </div>
         </div>
