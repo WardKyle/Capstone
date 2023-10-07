@@ -218,20 +218,22 @@ header {
   padding-left: 10%;
 }
 #firstSection {
-  padding: 0px 70px;
+  padding: 0px 10px;
   text-align: left;
   display: flex;
   width: 100%;
   min-height: 100vh;
   height: auto;
   font-weight: bold;
-  font-size: 1.8em;
+  font-size: 1.4em;
   justify-content: center;
   flex-direction: column;
   background-color: transparent;
 }
 #firstSection p {
   font-size:14px;
+  font-weight: normal;
+  padding-top: 10px;
 }
 .colorLayer, .fullColor {
   width: 100%;
@@ -426,16 +428,17 @@ footer p, footer a {
 @keyframes homeAbstract {
   0% {
     opacity: 0.4;
-    left: 0;
+    right: 100%;
     width: 0px;
   }
   50% {
     opacity: 0.4;
-    width: 100%
+    width: 50%
   }
   100% {
     opacity: 0.3;
-    left: 100%;
+    right: 0;
+    width: 0px;
   }
 }
 @keyframes slider {
@@ -496,7 +499,8 @@ footer p, footer a {
 }
 @media (min-width:800px){
   #firstSection {
-    font-size: 2.5em;
+    font-size: 2.0em;
+    padding: 0px 70px;
   }
   #firstSection p {
     font-size:16px;
