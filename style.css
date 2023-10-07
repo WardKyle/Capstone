@@ -45,7 +45,7 @@ header {
   left: 0;
   color: black;
   padding-left: 70px;
-  font-size:2em;
+  font-size:1.8em;
   line-height: 50px;
   background-image: url(docs/Logos/PassLockr.png);
   background-repeat: no-repeat;
@@ -53,6 +53,7 @@ header {
   background-position: 2px 5px;
   z-index: 2;
   border-bottom: 2px solid #e2e2e2;
+  font-weight: bold;
 }
 .homepage, .contact, .login {
   padding-top: 50px;
@@ -116,26 +117,30 @@ header {
   flex-direction: column;
   justify-items: center;
   align-items: center;
+  padding: 100px 0px;
 }
 .options {
   min-height: 200px;
-  width: 75%;
   margin: 20px;
   border-radius: 30px;
   box-shadow: 0px 0px 10px 0px rgb(var(--mainMaroonColor));
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  max-width: 80vw;
+  width: 350px;
 }
 .options .row1 {
   padding: 0px 10px;
   width: 100%;
   font-weight: bold;
-  font-size: 18px
+  font-size: 18px;
+  text-align: center;
 }
 .options p {
   padding: 10px 10px 5px 10px;
-  font-size: 12px;
+  font-size: 15px;
 }
 .options .contactButton a {
   text-decoration: none;
@@ -144,30 +149,42 @@ header {
 .options .contactButton {
   margin: 5px 10px;
   padding: 7px;
-  max-width: 120px;
+  width: 120px;
   background-color: rgb(var(--mainMaroonColor));
   border-radius: 10px;
   text-align: center;
+  box-shadow: 0px 0px 10px rgb(var(--mainLightBlueColor));
+}
+.flex-row {
+  display: flex;
+}
+.hoverOver {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  transition: padding-top 0.4s ease-out;
+  opacity: 0;
+  padding-top: 60px;
+  text-align: center;
+}
+.hoverOver:hover {
+  opacity: 1;
+  padding-top: 0px;
 }
 .fa-building, .fa-lightbulb, .fa-circle-question, .fa-handshake {
-  padding-right: 20px;
-  left: -41%;
-  top: 130px;
+  left: 0;
+  top: 0;
   font-size: 30px;
   position: relative;
   color: rgb(var(--mainLightBlueColor))
-}
-.contact .row_col:nth-child(2) {
-  background-image: url('./docs/Logos/Profile.jpg');
-  background-size: auto 90%;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
 }
 .contact .bottom_right {
   min-height: 300px;
   height: auto;
   font-weight: normal;
   padding-right: 15px;
+  font-size: 1.5em;
 }
 #firstSection, #thirdSection {
   background-color: white;
@@ -181,7 +198,7 @@ header {
   font-size: 20px;
   color: black;
 }
-#firstSection, #secondSection, #thirdSection {
+#secondSection, #thirdSection {
   height: auto;
   width:100%;
 }
@@ -196,8 +213,66 @@ header {
   flex-direction: column;
   text-align: center;
 }
-#firstSection .bottom_right {
-  flex: 1;
+.bottom_right {
+  text-align: left;
+  padding-left: 10%;
+}
+#firstSection {
+  padding: 0px 70px;
+  text-align: left;
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  font-weight: bold;
+  font-size: 2.5em;
+  justify-content: center;
+  flex-direction: column;
+  background-color: transparent;
+}
+.colorLayer, .fullColor {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  position: absolute;
+  color:white;
+}
+.colorLayer {
+  z-index: -1;
+  opacity: 0;
+}
+.fullColor {
+  z-index: -3;
+  opacity: 0.2;
+  transition: all 0.3s ease-out;
+}
+.changeColor  {
+  animation: homeAbstract 5s;
+}
+#abstract {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+  background-image: url("docs/Logos/abstract.jpg");
+  background-size: cover;
+  filter: grayscale(100%);
+  z-index: -3;
+  position: absolute;
+  opacity: 0.4;
+}
+#firstSection #marketing {
+  height: 50px;
+  width: 120px;
+  background-color:#a4b6c6f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
+  border-radius: 20px;
+}
+#firstSection #marketing a {
+  text-decoration: none;
+  color: black;
 }
 .doubleStack {
   display: flex;
@@ -326,13 +401,15 @@ footer p, footer a {
   padding-top: 80px;
 }
 .navLinks {
-  padding-bottom: 16px;
+  padding: 10px 16px;
+  color: black;
+  animation: navLinks-fadeIn 0.4s ease-out;
 }
 .navLinks a {
   font-size: 40px;
   text-decoration: none;
-  color: black;
   font-weight: bold;
+  color: black;
 }
 .hide {
   display: none !important;
@@ -342,6 +419,21 @@ footer p, footer a {
 }
 .fadeOut {
   animation: fa-fadeOut 100ms ease-out;
+}
+@keyframes homeAbstract {
+  0% {
+    opacity: 0.4;
+    left: 0;
+    width: 0px;
+  }
+  50% {
+    opacity: 0.4;
+    width: 100%
+  }
+  100% {
+    opacity: 0.3;
+    left: 100%;
+  }
 }
 @keyframes slider {
   0% {
@@ -363,6 +455,16 @@ footer p, footer a {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes navLinks-fadeIn {
+  0% {
+    opacity: 0;
+    padding: 50px 0px;
+  }
+  100% {
+    opacity: 1;
+    padding: 10px 16px;
   }
 }
 @keyframes fa-fadeIn {
@@ -393,7 +495,6 @@ footer p, footer a {
   #secondSection {
     display: flex;
   }
-
   .doubleStack {
     flex-direction: column;
   }
@@ -410,19 +511,8 @@ footer p, footer a {
   #testimonials p {
     font-size: 30px;
   }
-  #contact_options {
-    flex-direction: row;
-    padding-right: 20px;
-    padding-left: 0px;
-  }
-  .options {
-    min-height: 250px;
-    margin: 0px;
-    width: 100%
-  }
   .fa-building, .fa-lightbulb, .fa-circle-question, .fa-handshake {
-    padding-right: 5px;
-    left: 2px;
-    top: 0;
+    left: -220px;
+    top: 130px;
   }
 }
