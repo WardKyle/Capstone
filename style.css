@@ -45,7 +45,7 @@ header {
   left: 0;
   color: black;
   padding-left: 70px;
-  font-size:1.8em;
+  font-size: 1.4em;
   line-height: 50px;
   background-image: url(docs/Logos/PassLockr.png);
   background-repeat: no-repeat;
@@ -54,8 +54,9 @@ header {
   z-index: 2;
   border-bottom: 2px solid #e2e2e2;
   font-weight: bold;
+  content: "New";
 }
-.homepage, .contact, .login {
+.contact, .login {
   padding-top: 50px;
 }
 .login {
@@ -168,9 +169,15 @@ header {
   padding-top: 60px;
   text-align: center;
 }
-.hoverOver:hover {
+.hoverOver:hover, .hoverOver:active {
   opacity: 1;
   padding-top: 0px;
+}
+@media (hover: hover) {
+  .hoverOver:hover, .hoverOver:active {
+    opacity: 1;
+    padding-top: 0px;
+  }
 }
 .fa-building, .fa-lightbulb, .fa-circle-question, .fa-handshake {
   left: 0;
@@ -260,10 +267,9 @@ header {
   height: auto;
   background-image: url("docs/Logos/abstract.jpg");
   background-size: cover;
-  filter: grayscale(100%);
   z-index: -3;
   position: absolute;
-  opacity: 0.4;
+  opacity: 0.2;
 }
 #firstSection #marketing {
   height: 50px;
@@ -309,9 +315,9 @@ header {
   border-right: 1px solid black;
 }
 ol {
-  padding: 10px;
-  text-align: left;
-  margin: 20px;
+  margin: 20px 0px;
+  padding: 0;
+  list-style-position: inside;
 }
 footer {
   min-height: 270px;
@@ -377,7 +383,7 @@ footer p, footer a {
   display: flex;
   text-align: center;
   align-items: center;
-  background: linear-gradient(90deg, rgba(97,3,69,1) 0%, rgba(255,255,255,1) 100%);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(97,3,69,1) 100%);
 }
 #testimonials p {
   font-size: 20px;
@@ -498,6 +504,9 @@ footer p, footer a {
   }
 }
 @media (min-width:800px){
+  header {
+    font-size: 1.8em;
+  }
   #firstSection {
     font-size: 2.0em;
     padding: 0px 70px;

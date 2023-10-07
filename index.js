@@ -18,6 +18,7 @@ function render(state = store.Home) {
   if (state == store.Home) {
     utils.playSlider();
     utils.homeAbstract();
+    utils.scrollDetect();
   }
 }
 
