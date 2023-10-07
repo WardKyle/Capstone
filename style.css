@@ -51,13 +51,13 @@ header {
   background-repeat: no-repeat;
   background-size: auto 40px;
   background-position: 2px 5px;
-  z-index: 2;
+  z-index: 5;
   border-bottom: 2px solid #e2e2e2;
   font-weight: bold;
   content: "New";
 }
 .contact, .login {
-  padding-top: 50px;
+  padding-top: 70px;
 }
 .login {
   height: 100vh;
@@ -169,16 +169,10 @@ header {
   padding-top: 60px;
   text-align: center;
 }
-.hoverOver:hover, .hoverOver:active {
+/* .hoverOver:hover, .hoverOver:active {
   opacity: 1;
   padding-top: 0px;
-}
-@media (hover: hover) {
-  .hoverOver:hover, .hoverOver:active {
-    opacity: 1;
-    padding-top: 0px;
-  }
-}
+} */
 .fa-building, .fa-lightbulb, .fa-circle-question, .fa-handshake {
   left: 0;
   top: 0;
@@ -266,7 +260,7 @@ header {
   min-height: 100vh;
   height: auto;
   background-image: url("docs/Logos/abstract.jpg");
-  background-size: cover;
+  background-size: contain;
   z-index: -3;
   position: absolute;
   opacity: 0.2;
@@ -536,5 +530,8 @@ footer p, footer a {
   .fa-building, .fa-lightbulb, .fa-circle-question, .fa-handshake {
     left: -220px;
     top: 130px;
+  }
+  #abstract {
+    background-size: cover;
   }
 }
