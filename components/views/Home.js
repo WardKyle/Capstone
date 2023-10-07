@@ -2,9 +2,16 @@ import html from "html-literal";
 
 export default () => html`
   <section class="homepage">
+    <div id="abstract"></div>
+    <div class="fullColor"></div>
+    <div class="colorLayer"></div>
     <section id="firstSection">
-      <div class="top_left">Password Management Has Never Been So Simple</div>
-      <div class="bottom_right"></div>
+      We simplify the password management experience
+      <p>
+        Streamlined UX, condensed content display, custom controls, and quicker
+        navigation offers our users the best experience
+      </p>
+      <div id="marketing"><a href="Login">Free, always</a></div>
     </section>
     <section id="secondSection">
       <div class="doubleStack">
