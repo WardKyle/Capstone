@@ -1,4 +1,5 @@
 export function homeAbstract() {
+  restart();
   const colorLayer = document.querySelector(".colorLayer");
   const fullColor = document.querySelector(".fullColor");
 
@@ -10,7 +11,7 @@ export function homeAbstract() {
   let random = Math.floor(Math.random() * 6);
   let previous = random;
   function restart() {
-    setTimeout(async function() {
+    setTimeout(function() {
       colorLayer.classList.toggle("changeColor");
       if (colorLayer.classList.contains("changeColor")) {
         colorLayer.style.backgroundColor = colors[random];
@@ -24,5 +25,4 @@ export function homeAbstract() {
       restart();
     }, 5000);
   }
-  restart();
 }
