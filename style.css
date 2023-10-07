@@ -225,10 +225,13 @@ header {
   min-height: 100vh;
   height: auto;
   font-weight: bold;
-  font-size: 2.5em;
+  font-size: 1.8em;
   justify-content: center;
   flex-direction: column;
   background-color: transparent;
+}
+#firstSection p {
+  font-size:14px;
 }
 .colorLayer, .fullColor {
   width: 100%;
@@ -492,6 +495,12 @@ footer p, footer a {
   }
 }
 @media (min-width:800px){
+  #firstSection {
+    font-size: 2.5em;
+  }
+  #firstSection p {
+    font-size:16px;
+  }
   #secondSection {
     display: flex;
   }
