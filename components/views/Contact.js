@@ -1,4 +1,6 @@
 import html from "html-literal";
+import mobileHover from "../../utils/mobileHover.js";
+window.hoverTrick = mobileHover;
 
 export default () => html`
   <section class="contact">
@@ -10,7 +12,7 @@ export default () => html`
       </p>
       <div id="contact_options">
         <i class="fa-sharp fa-solid fa-building"></i>
-        <div class="flex-row">
+        <div class="flex-row" onmouseover="hoverTrick(0)">
           <div class="options">
             <div class="row1">Need an enterprise license for a business?</div>
           </div>
@@ -25,7 +27,7 @@ export default () => html`
           </div>
         </div>
         <i class="fa-solid fa-lightbulb"></i>
-        <div class="flex-row">
+        <div class="flex-row" onmouseover="hoverTrick(1)">
           <div class="options">
             <div class="row1">Have an idea regarding a feature we can add?</div>
           </div>
@@ -40,7 +42,7 @@ export default () => html`
           </div>
         </div>
         <i class="fa-solid fa-circle-question"></i>
-        <div class="flex-row">
+        <div class="flex-row" onmouseover="hoverTrick(2)">
           <div class="options">
             <div class="row1">Need Help?</div>
           </div>
@@ -55,7 +57,7 @@ export default () => html`
           </div>
         </div>
         <i class="fa-solid fa-handshake"></i>
-        <div class="flex-row">
+        <div class="flex-row" onmouseover="hoverTrick(3)">
           <div class="options">
             <div class="row1">Want to partner with us?</div>
           </div>
