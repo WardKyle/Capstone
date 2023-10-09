@@ -7,7 +7,7 @@ export function homeAbstract() {
   let newColor = [],
     thisColor;
 
-  //Below is so page loads with animation right away, with that being white
+  //Below is so page loads with animation right away, and with white first for more subtle effect
   colorLayer.classList.toggle("changeColor");
   colorLayer.style.backgroundColor = "white";
   fullColor.style.backgroundColor = "white";

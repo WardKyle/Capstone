@@ -51,7 +51,7 @@ header {
   background-repeat: no-repeat;
   background-size: auto 40px;
   background-position: 2px 5px;
-  z-index: 5;
+  z-index: 10;
   border-bottom: 2px solid #e2e2e2;
   font-weight: bold;
   content: "New";
@@ -164,7 +164,7 @@ header {
   z-index: 2;
   background-color: rgba(0,0,0,0.8);
   color: white;
-  transition: padding-top 0.4s ease-out;
+  transition: all 0.3s ease-out;
   opacity: 0;
   padding-top: 60px;
   text-align: center;
@@ -261,19 +261,46 @@ header {
   position: absolute;
   opacity: 0.2;
 }
-#firstSection #marketing {
+#firstSection #marketing, #firstSection #marketing--anim, #firstSection #marketing--white  {
   height: 50px;
   width: 120px;
-  background-color:#a4b6c6f2;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 40px;
   border-radius: 20px;
+  transition: all 0.2s ease-out;
 }
-#firstSection #marketing a {
+#firstSection > #marketing > a  {
   text-decoration: none;
   color: black;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  border-radius: 20px;
+  background-color: transparent;
+  z-index: 3;
+  border: 1px solid black;
+}
+#firstSection #marketing--anim  {
+  position: relative;
+  top: -50px;
+  margin: 0;
+  z-index: 2;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  transition: all 0.4s ease-out;
+  padding: 5px;
+}
+#firstSection #marketing--white {
+  position: relative;
+  background-color:white;
+  z-index: 1;
+  top: -100px;
+  margin: 0;
 }
 .doubleStack {
   display: flex;
@@ -421,6 +448,11 @@ footer p, footer a {
 .fadeOut {
   animation: fa-fadeOut 100ms ease-out;
 }
+
+/*
+All @keyframes below
+*/
+
 @keyframes homeAbstract {
   0% {
     opacity: 0.4;
@@ -493,6 +525,11 @@ footer p, footer a {
     padding: 20px;
   }
 }
+
+/*
+All @media items below. Build with a mobile first design
+*/
+
 @media (min-width:800px){
   header {
     font-size: 1.8em;
