@@ -11,7 +11,11 @@ export default () => html`
         Streamlined UX, condensed content display, custom controls, and quicker
         navigation offers our users the best experience
       </p>
-      <div id="marketing"><a href="Login">Free, always</a></div>
+      <div id="marketing">
+        <a href="Login">Free, always</a>
+      </div>
+      <div id="marketing--anim" class="anim--mouseLeave"></div>
+      <div id="marketing--white"></div>
     </section>
     <section id="secondSection">
       <div class="doubleStack">

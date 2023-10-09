@@ -19,6 +19,7 @@ function render(state = store.Home) {
     utils.playSlider();
     utils.homeAbstract();
     utils.scrollDetect();
+    utils.marketingAnim();
   }
 }
 
