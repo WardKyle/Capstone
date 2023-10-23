@@ -1,4 +1,5 @@
 export default {
   header: "Library",
-  view: "Library"
+  view: "Library",
+  passwords: []
 };

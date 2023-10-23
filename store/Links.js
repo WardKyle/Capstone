@@ -10,7 +10,6 @@ const Links = [
 const fullLinks = [
   { title: "Home", text: "Home" },
   { title: "Contact", text: "Contact" },
-  { title: "Login", text: "Login" },
   { title: "Library", text: "Library" },
   { title: "Submit", text: "Submit" }
 ];

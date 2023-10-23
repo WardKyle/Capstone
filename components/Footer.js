@@ -24,7 +24,7 @@ export default () => html`<footer>
   <p><a href="https://github.com/WardKyle" target="_blank"><i class="fa-brands fa-github"></i></a></p>
 </div>
 <div class="col5">Join Our Newsletter
-  <form>
+  <form autocomplete="off">
     <input type="email" name="email">
   </form>
 </div>

@@ -7,10 +7,26 @@ import axios from "axios";
 
 const router = new Navigo("/");
 
+function storeUsers(response) {
+  response ? localStorage.setItem("storedUsers", JSON.stringify(response)) : [];
+}
+
+function hasAccess() {
+  const approved = window.localStorage.getItem("user_id");
+  if (approved) {
+    return true;
+  }
+  return false;
+}
+
+function mySort(a, b) {
+  return a.platform.localeCompare(b.platform);
+}
+
 function render(state = store.Home) {
   let renderThis = `${Header(state)} ${Main(state)}
   ${Footer()}`;
-  utils.hasAccess()
+  hasAccess()
     ? (renderThis += `${Nav(store.fullLinks, state)}`)
     : (renderThis += `${Nav(store.Links, state)}`);
   document.querySelector("#root").innerHTML = renderThis;
@@ -30,21 +46,17 @@ router.hooks({
         ? capitalize(params.data.view)
         : "Home";
     switch (view) {
-      case "Login":
+      // const storedUserId = window.localStorage.getItem("user_id");
+      case "Library":
         axios
           .get(
-            `https://api.openweathermap.org/data/2.5/weather?appid=${process.env.OPEN_WEATHER_MAP_API_KEY}&q=st%20louis`
+            `${
+              process.env.PASSLOCKR_API_URL
+            }/database/?user_id=${window.localStorage.getItem("user_id")}`
           )
           .then(response => {
-            // Convert Kelvin to Fahrenheit since OpenWeatherMap does provide otherwise
-            const kelvinToFahrenheit = kelvinTemp =>
-              Math.round((kelvinTemp - 273.15) * (9 / 5) + 32);
-            store.Login.weather = {
-              city: response.data.name,
-              temp: kelvinToFahrenheit(response.data.main.temp),
-              feelsLike: kelvinToFahrenheit(response.data.main.feels_like),
-              description: response.data.weather[0].main
-            };
+            const alpha = response.data.sort(mySort);
+            store.Library.passwords = alpha;
             done();
           })
           .catch(error => {
@@ -67,7 +79,19 @@ router.hooks({
 
 router
   .on({
-    "/": () => render(),
+    "/": () => {
+      window.localStorage.clear();
+      hasAccess();
+      render();
+      axios
+        .get(`${process.env.PASSLOCKR_API_URL}/users`)
+        .then(response => {
+          storeUsers(response.data);
+        })
+        .catch(error => {
+          console.log("Error occurred: ", error);
+        });
+    },
     ":view": params => {
       let view = capitalize(params.data.view);
       if (view in store) {
