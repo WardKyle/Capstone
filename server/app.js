@@ -2,6 +2,9 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import database from "./routers/database.js";
+import users from "./routers/users.js";
+
 // Initialize the Express application
 const app = express();
 
@@ -96,6 +99,9 @@ app.get("/weather/:city", (request, response) => {
     })
   );
 });
+
+app.use("/users", users);
+app.use("/database", database);
 
 // Tell the Express app to start listening
 // Let the humans know I am running and listening on 4040

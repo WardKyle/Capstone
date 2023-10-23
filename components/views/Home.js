@@ -46,6 +46,9 @@ export default () => html`
         <p id="slide3" style="display:none;">
           "Life. Saver. And not the sugar coated kind." -Anonymous
         </p>
+        <p id="slide4" style="display:none;">
+          "I was today years old when I found my new best friend." -Anonymous
+        </p>
       </div>
     </section>
   </section>

@@ -1,7 +1,32 @@
 import html from "html-literal";
+import toggleSignIn from "../../utils/toggleSignIn";
+import authenticate from "../../utils/authenticate";
+window.toggleSignIn = toggleSignIn;
+window.authenticate = authenticate;
+
+document.addEventListener("DOMContentLoaded", init, false);
+
+let formUsername, formPassword;
+function init() {
+  formUsername = document.querySelector("#username");
+  formPassword = document.querySelector("#password");
+  let formItems = Array.from(document.querySelectorAll("input"));
+  formItems.forEach(el => el.addEventListener("input", handleChange, false));
+}
+
+function handleChange() {
+  let form = {};
+  form.username = formUsername.value;
+  form.password = formPassword.value;
+  save(form);
+}
+
+function save(param) {
+  const form = JSON.stringify(param);
+  window.localStorage.setItem("form", form);
+}
 
 export default state => {
-  console.log(state.weather);
   return html`
     <section class="login">
       <a href="Home"
@@ -11,17 +36,20 @@ export default state => {
           alt="PassLockr Logo"
       /></a>
       <h1>Welcome to PassLockr</h1>
-      <div id="signIn">Sign In</div>
+      <div id="signIn" onClick="toggleSignIn()">Sign In</div>
       <div id="forgotPassword">Forgot Password</div>
-      <section>
-        <h4>Adding weather API for homework requirements</h4>
-        <p style="text-align:center;">City: ${state.weather.city}</p>
-        <p style="text-align:center;">Temp: ${state.weather.temp}</p>
-        <p style="text-align:center;">Feels like: ${state.weather.feelsLike}</p>
-        <p style="text-align:center;">
-          Description: ${state.weather.description}
-        </p>
-      </section>
+      <div class="hideSignIn" id="signIn--screen">
+        <div id="signIn--box">
+          <div id="close" onClick="toggleSignIn()">
+            <i class="fa-solid fa-xmark"></i>
+          </div>
+          <form autocomplete="off">
+            <input type="text" id="username" placeholder="username" required />
+            <input type="text" id="password" placeholder="password" required />
+            <button id="signIn--button" onClick="authenticate()">Submit</button>
+          </form>
+        </div>
+      </div>
     </section>
   `;
 };

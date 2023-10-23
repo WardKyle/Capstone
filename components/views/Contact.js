@@ -22,7 +22,7 @@ export default () => html`
               features to meet all your needs.
             </p>
             <div class="contactButton">
-              <a href="mailto: email@passlockr.com">Send Inquiry</a>
+              <a href="mailto: email@passlockr-app.com">Send Inquiry</a>
             </div>
           </div>
         </div>
@@ -37,7 +37,7 @@ export default () => html`
               product development teams is always making improvements.
             </p>
             <div class="contactButton">
-              <a href="mailto: email@passlockr.com">Add Feature</a>
+              <a href="mailto: email@passlockr-app.com">Add Feature</a>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ export default () => html`
           <div class="options hoverOver">
             <p>Let's work together and discuss ways we could collaborate.</p>
             <div class="contactButton">
-              <a href="mailto: email@passlockr.com">Email Us</a>
+              <a href="mailto: email@passlockr-app.com">Email Us</a>
             </div>
           </div>
         </div>
