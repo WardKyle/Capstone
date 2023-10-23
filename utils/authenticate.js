@@ -15,7 +15,10 @@ export default function authenticate() {
     user_id = found._id;
     window.localStorage.setItem("user_id", user_id);
     toggleSignIn();
-    setTimeout(() => (location.href = "http://localhost:1234/Library"), 200);
+    setTimeout(
+      () => (location.href = `${process.env.PASSLOCKR_API_URL}/Library`),
+      200
+    );
   } else {
     console.log("not found");
   }
