@@ -16,7 +16,7 @@ export default function authenticate() {
     window.localStorage.setItem("user_id", user_id);
     toggleSignIn();
     setTimeout(
-      () => (location.href = `${process.env.PASSLOCKR_API_URL}/Library`),
+      () => (location.href = `${process.env.SERVER_LOCATION}/Library`),
       200
     );
   } else {
