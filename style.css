@@ -91,6 +91,9 @@ header {
 #signIn:hover {
   background-color: rgba(var(--mainMaroonColor),1);
 }
+#signIn > div {
+  font-size: 16px;
+}
 #forgotPassword:hover {
   background-color: black;
   color: white;
@@ -369,7 +372,7 @@ footer input, footer input:focus {
   flex-direction: column;
   width: 100%;
 }
-#signIn--screen input, #signIn--screen input:focus {
+#signIn--screen input, #signIn--screen input:focus, #filtered--list input, #filtered-list input:focus {
   padding: 5px;
   margin-block: 5px;
   min-width: 100px;
@@ -580,7 +583,7 @@ footer p, footer a {
   border-top-right-radius : 100%;
   border-top-left-radius: 100%;
 }
-#user--passwords {
+#user--passwords, #filtered--list {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -599,7 +602,7 @@ footer p, footer a {
   transition: all 0.3s ease-out;
   padding: 200px 10px;
 }
-#user--passwords::-webkit-scrollbar {
+#user--passwords::-webkit-scrollbar, #filtered--list::-webkit-scrollbar {
   display: none;
 }
 .password--platform, .user--password {
@@ -613,22 +616,15 @@ footer p, footer a {
   flex-direction: column;
   min-height: 120px;
 }
-.password--platform {
-
-}
 .user--password {
   color: transparent;
   font-weight: bold;
+  overflow-wrap: anywhere;
 }
-.hidePasswords {
+.hidePasswords, .hideFilter {
   opacity:0;
   z-index:-5;
   visibility: hidden;
-}
-.showPasswords {
-  opacity:1;
-  z-index:15;
-  visibility: visible;
 }
 .listToggle {
   z-index: 17;
@@ -637,6 +633,7 @@ footer p, footer a {
   left: calc(40% - 70px);
   font-size: 1.6rem;
 }
+
 /*
 All @keyframes below
 */

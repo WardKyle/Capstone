@@ -4,28 +4,6 @@ import authenticate from "../../utils/authenticate";
 window.toggleSignIn = toggleSignIn;
 window.authenticate = authenticate;
 
-document.addEventListener("DOMContentLoaded", init, false);
-
-let formUsername, formPassword;
-function init() {
-  formUsername = document.querySelector("#username");
-  formPassword = document.querySelector("#password");
-  let formItems = Array.from(document.querySelectorAll("input"));
-  formItems.forEach(el => el.addEventListener("input", handleChange, false));
-}
-
-function handleChange() {
-  let form = {};
-  form.username = formUsername.value;
-  form.password = formPassword.value;
-  save(form);
-}
-
-function save(param) {
-  const form = JSON.stringify(param);
-  window.localStorage.setItem("form", form);
-}
-
 export default state => {
   return html`
     <section class="login">
@@ -36,7 +14,7 @@ export default state => {
           alt="PassLockr Logo"
       /></a>
       <h1>Welcome to PassLockr</h1>
-      <div id="signIn" onClick="toggleSignIn()">Sign In</div>
+      <div id="signIn">Loading Users</div>
       <div id="forgotPassword">Forgot Password</div>
       <div class="hideSignIn" id="signIn--screen">
         <div id="signIn--box">
