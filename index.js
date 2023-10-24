@@ -23,6 +23,17 @@ function mySort(a, b) {
   return a.platform.localeCompare(b.platform);
 }
 
+function axiosCall() {
+  axios
+    .get(`${process.env.PASSLOCKR_API_URL}/users`)
+    .then(response => {
+      storeUsers(response.data);
+    })
+    .catch(error => {
+      console.log("Error occurred: ", error);
+    });
+}
+
 let formUsername, formPassword;
 function handleChange() {
   let form = {};
@@ -86,6 +97,13 @@ function render(state = store.Home) {
 }
 function afterRender(page) {
   if (page === store.Login) {
+    (async () => {
+      window.localStorage.setItem("axios", "still loading");
+      window.localStorage.setItem("page", "still loading");
+      await axiosCall();
+      window.localStorage.setItem("axios", "loaded");
+    })();
+
     wait();
 
     (function() {
@@ -109,26 +127,6 @@ router.hooks({
         : "Home";
     switch (view) {
       // const storedUserId = window.localStorage.getItem("user_id");
-      case "Login":
-        (async () => {
-          window.localStorage.setItem("axios", "still loading");
-          window.localStorage.setItem("page", "still loading");
-          await axiosCall();
-          window.localStorage.setItem("axios", "loaded");
-        })();
-        function axiosCall() {
-          axios
-            .get(`${process.env.PASSLOCKR_API_URL}/users`)
-            .then(response => {
-              storeUsers(response.data);
-              done();
-            })
-            .catch(error => {
-              console.log("Error occurred: ", error);
-              done();
-            });
-        }
-        break;
       case "Library":
         axios
           .get(
