@@ -10,6 +10,5 @@ const Links = [
 const fullLinks = [
   { title: "Home", text: "Home" },
   { title: "Contact", text: "Contact" },
-  { title: "Library", text: "Library" },
-  { title: "Submit", text: "Submit" }
+  { title: "Library", text: "Library" }
 ];

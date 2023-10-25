@@ -102,6 +102,7 @@ function afterRender(page) {
       window.localStorage.setItem("page", "still loading");
       await axiosCall();
       window.localStorage.setItem("axios", "loaded");
+      authenticate("reload");
     })();
 
     wait();
@@ -126,7 +127,6 @@ router.hooks({
         ? capitalize(params.data.view)
         : "Home";
     switch (view) {
-      // const storedUserId = window.localStorage.getItem("user_id");
       case "Library":
         axios
           .get(

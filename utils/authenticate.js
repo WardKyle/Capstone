@@ -1,4 +1,8 @@
-export default function authenticate() {
+export default function authenticate(param = 1) {
+  if (param != 1) {
+    const users = JSON.parse(window.localStorage.getItem("storedUsers"));
+    return;
+  }
   event.preventDefault();
 
   const users = JSON.parse(window.localStorage.getItem("storedUsers"));

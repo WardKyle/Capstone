@@ -372,7 +372,7 @@ footer input, footer input:focus {
   flex-direction: column;
   width: 100%;
 }
-#signIn--screen input, #signIn--screen input:focus, #filtered--list input, #filtered-list input:focus {
+#signIn--screen input, #signIn--screen input:focus, input#filtered--text, input#newPassword--platform, input#newPassword--password {
   padding: 5px;
   margin-block: 5px;
   min-width: 100px;
@@ -533,9 +533,9 @@ footer p, footer a {
   justify-content: center;
   flex-direction: column;
 }
-.library--button {
+.library--button, #button--add {
   width: 140px;
-  height: 60px;
+  height: 40px;
   background-color: rgba(var(--mainMaroonColor), 0.6);
   border-radius: 30px;
   display: flex;
@@ -550,9 +550,30 @@ footer p, footer a {
   transition: all 0.3s ease-out;
   top: 0px;
   position: relative;
+  font-size: 1.4rem;
 }
-.library--button:hover {
+#button--add {
+  top: 60px;
+  position: fixed;
+  right: 20px;
+  margin-left: 0px;
+}
+.library--button:hover, #button--add:hover {
   background-color: rgb(var(--mainMaroonColor));
+}
+input#filtered--text, input#newPassword--platform, input#newPassword--password {
+  width: 160px;
+  font-size: 1.4rem;
+  position: fixed;
+  left: calc(100% - 180px);
+  top: 120px;
+  transition: all 0.3s ease-out;
+}
+input#newPassword--platform {
+  top: 120px;
+}
+input#newPassword--password {
+  top: 170px;
 }
 #lock--body, #lock--top, #lock--top--circle {
   background-color: rgba(var(--mainMaroonColor), .1);
@@ -573,6 +594,7 @@ footer p, footer a {
   border-top-left-radius: 100%;
   top: calc(50vh - 225px);
   left: -55px;
+  transition: transform 0.5s ease-out, margin-left 0.35s linear;
 }
 #lock--top--circle {
   background-color: white;
@@ -582,6 +604,12 @@ footer p, footer a {
   left: -15px;
   border-top-right-radius : 100%;
   border-top-left-radius: 100%;
+  transition: transform 0.5s ease-out, margin-left 0.35s linear;
+}
+.open--lock {
+  transform: rotatey(180deg);
+  margin-left: 120px;
+  margin-bottom: 20px;
 }
 #user--passwords, #filtered--list {
   position: fixed;
@@ -600,7 +628,7 @@ footer p, footer a {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   transition: all 0.3s ease-out;
-  padding: 200px 10px;
+  padding: 240px 10px;
 }
 #user--passwords::-webkit-scrollbar, #filtered--list::-webkit-scrollbar {
   display: none;
@@ -629,9 +657,10 @@ footer p, footer a {
 .listToggle {
   z-index: 17;
   position: fixed;
-  top: 50px;
-  left: calc(40% - 70px);
+  top: 10px;
+  left: calc(100% - 160px);
   font-size: 1.6rem;
+  margin-left: 0%;
 }
 
 /*
@@ -758,6 +787,7 @@ All @media items below. Build with a mobile first design
   .library--button {
     width: 180px;
     margin-left: 20%;
+    height: 60px;
   }
   #lock--body{
     left: calc(20% + 100px);
@@ -768,7 +798,31 @@ All @media items below. Build with a mobile first design
   #lock--top--circle {
     left: calc(20% + 185px);
   }
+  #user--passwords, #filtered--list {
+    padding: 100px 10px;
+  }
+  input#filtered--text {
+    left: calc(100% - 220px);
+    top: 190px;
+    width: 180px;
+  }
   .listToggle {
-    left: calc(30% - 90px);
+    left: calc(80% - 220px);
+  }
+  #button--add {
+    top: 90px;
+    width: 180px;
+    height: 60px;
+    right: 40px;
+  }
+  input#newPassword--platform {
+    top: 170px;
+    width: 240px;
+    left: calc(100% - 280px);
+  }
+  input#newPassword--password {
+    top: 220px;
+    width: 240px;
+    left: calc(100% - 280px);
   }
 }
