@@ -1,10 +1,10 @@
 import * as state from "../store/index.js";
 
 export default function toggleFilter() {
-  const lockTop = document.querySelector("#lock--top");
-  const lockTopInner = document.querySelector("#lock--top--circle");
-  lockTop.classList.toggle("open--lock");
-  lockTopInner.classList.toggle("open--lock");
+  // const lockTop = document.querySelector("#lock--top");
+  // const lockTopInner = document.querySelector("#lock--top--circle");
+  // lockTop.classList.toggle("open--lock");
+  // lockTopInner.classList.toggle("open--lock");
   let formText;
   function init() {
     formText = document.querySelector("#filtered--text");
