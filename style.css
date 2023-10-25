@@ -746,7 +746,7 @@ All @media items below. Build with a mobile first design
 
 @media (min-width:600px){
   #filtered--list{
-    align-items: flex-start;
+    align-items: center;
   }
 }
 @media (min-width:800px){
