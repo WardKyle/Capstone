@@ -128,21 +128,23 @@ router.hooks({
         : "Home";
     switch (view) {
       case "Library":
-        axios
-          .get(
-            `${
-              process.env.PASSLOCKR_API_URL
-            }/database/?user_id=${window.localStorage.getItem("user_id")}`
-          )
-          .then(response => {
-            const alpha = response.data.sort(mySort);
-            store.Library.passwords = alpha;
-            done();
-          })
-          .catch(error => {
-            console.log("Error occurred: ", error);
-            done();
-          });
+        (async () => {
+          await axios
+            .get(
+              `${
+                process.env.PASSLOCKR_API_URL
+              }/database/?user_id=${window.localStorage.getItem("user_id")}`
+            )
+            .then(response => {
+              const alpha = response.data.sort(mySort);
+              store.Library.passwords = alpha;
+              done();
+            })
+            .catch(error => {
+              console.log("Error occurred: ", error);
+              done();
+            });
+        })();
         break;
       default:
         done();

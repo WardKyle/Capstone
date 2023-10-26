@@ -2,9 +2,15 @@ import html from "html-literal";
 import showPassword from "../../utils/showPassword";
 import addPassword from "../../utils/addPassword";
 import toggleFilter from "../../utils/toggleFilter";
+import editPassword from "../../utils/editPassword";
+import submitUpdate from "../../utils/submitUpdate";
+import deletePassword from "../../utils/deletePassword";
 window.viewPassword = showPassword;
 window.addNew = addPassword;
 window.toggleFilterList = toggleFilter;
+window.editPassword = editPassword;
+window.submitUpdate = submitUpdate;
+window.deletePassword = deletePassword;
 
 export default state => {
   return html`
