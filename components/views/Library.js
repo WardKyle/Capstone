@@ -6,7 +6,6 @@ import editPassword from "../../utils/editPassword";
 import submitUpdate from "../../utils/submitUpdate";
 import deletePassword from "../../utils/deletePassword";
 import clearFilter from "../../utils/clearFilter";
-import copyText from "../../utils/copyText";
 window.viewPassword = showPassword;
 window.addNew = addPassword;
 window.toggleFilterList = toggleFilter;
@@ -14,7 +13,6 @@ window.editPassword = editPassword;
 window.submitUpdate = submitUpdate;
 window.deletePassword = deletePassword;
 window.clearFilter = clearFilter;
-window.copyText = copyText;
 
 export default state => {
   return html`
