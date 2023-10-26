@@ -34,8 +34,9 @@ export default function authenticate(param = 1) {
           invalid.innerHTML = "Invalid attempt, please try again";
         }
       } else {
-        console.log("not found");
-        authenticate();
+        usernameField.value = "";
+        passwordField.value = "";
+        invalid.innerHTML = "Invalid attempt, please try again";
       }
     } catch (error) {
       console.error(error);
