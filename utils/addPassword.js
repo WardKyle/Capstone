@@ -31,7 +31,6 @@ export default function addPassword() {
             const sorted = param.sort((a, b) =>
               a.platform.localeCompare(b.platform)
             );
-            console.log(sorted);
             const render = document.querySelector("#filter--root");
             const renderIt = sorted.map(
               el =>
