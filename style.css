@@ -372,7 +372,7 @@ footer input, footer input:focus {
   flex-direction: column;
   width: 100%;
 }
-#signIn--screen input, #signIn--screen input:focus, input#filtered--text, input#newPassword--platform, input#newPassword--password {
+#signIn--screen input, #signIn--screen input:focus, input#filtered--text, input#newPassword--platform, input#newPassword--password, .edit--password {
   padding: 5px;
   margin-block: 5px;
   min-width: 100px;
@@ -575,6 +575,11 @@ input#newPassword--platform {
 input#newPassword--password {
   top: 170px;
 }
+.edit--password{
+  font-size: 0.8rem;
+  width: auto;
+  visibility: hidden;
+}
 #lock--body, #lock--top, #lock--top--circle {
   background-color: rgba(var(--mainMaroonColor), .1);
   z-index: -1;
@@ -607,9 +612,7 @@ input#newPassword--password {
   transition: transform 0.5s ease-out, margin-left 0.35s linear;
 }
 .open--lock {
-  transform: rotatey(180deg);
-  margin-left: 120px;
-  margin-bottom: 20px;
+  transform: none;
 }
 #filtered--list {
   position: fixed;
@@ -637,12 +640,14 @@ input#newPassword--password {
   font-size: 1.4rem;
   transition: all 0.3s ease-out;
   text-align: center;
+  font-size: 1rem;
 }
 .hover--container {
   display: flex;
   align-items: center;
   flex-direction: column;
   min-height: 120px;
+  position: relative;
 }
 .user--password {
   color: transparent;
@@ -662,12 +667,20 @@ input#newPassword--password {
   font-size: 1.6rem;
   margin-left: 0%;
 }
-.fa-pencil {
-  font-size: 12px;
-  margin-left: 15px;
-  position: absolute;
-  transition: all 0.3s ease-out;
+.fa-pencil, .fa-check, .fa-trash {
   cursor: pointer;
+  margin-left: calc(100% - 40px);
+  font-size: 12px;
+  transition: all .3s ease-out;
+  position: absolute;
+  color: transparent;
+  display: block;
+}
+.fa-check {
+  font-size: 16px;
+}
+.fa-trash {
+  margin-left: calc(100%);
 }
 /*
 All @keyframes below
@@ -750,9 +763,17 @@ All @keyframes below
 All @media items below. Build with a mobile first design
 */
 
+@media (min-width:400px){
+  .password--platform, .user--password {
+    font-size: 1.2rem;
+  }
+}
 @media (min-width:600px){
   #filtered--list{
     align-items: center;
+  }
+  .password--platform, .user--password {
+    font-size: 1.4rem;
   }
 }
 @media (min-width:800px){
@@ -835,5 +856,10 @@ All @media items below. Build with a mobile first design
     top: 220px;
     width: 240px;
     left: calc(100% - 280px);
+  }
+  .open--lock {
+    transform: rotatey(180deg);
+    margin-left: 120px;
+    margin-bottom: 20px;
   }
 }
