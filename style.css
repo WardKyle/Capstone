@@ -588,8 +588,8 @@ input#newPassword--password {
   font-size: 14px;
   transition: all .3s ease-out;
   position: fixed;
-  top: 202px;
-  left: calc(100% - 58px);
+  top: 133px;
+  left: calc(100% - 37px);
   color: black;
   cursor: pointer;
 }
@@ -880,5 +880,9 @@ All @media items below. Build with a mobile first design
     transform: rotatey(180deg);
     margin-left: 120px;
     margin-bottom: 20px;
+  }
+  .fa-circle-xmark {
+    top: 202px;
+    left: calc(100% - 58px);
   }
 }
