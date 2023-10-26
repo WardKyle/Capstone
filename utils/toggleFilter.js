@@ -38,6 +38,7 @@ export default function toggleFilter() {
   const addButton = document.querySelector("#button--add");
   const newpass_platform = document.querySelector("#newPassword--platform");
   const newpass_password = document.querySelector("#newPassword--password");
+  const faCircle = document.querySelector(".fa-circle-xmark");
   const buttonText = filterButton.innerHTML.trim();
   filterList.classList.toggle("hideFilter");
   filterButton.classList.toggle("listToggle");
@@ -48,6 +49,7 @@ export default function toggleFilter() {
     filterButton.innerHTML = "view all";
     filterButton.classList.remove("hideFilter");
     filterText.classList.remove("hideFilter");
+    faCircle.classList.remove("hideFilter");
     addButton.innerHTML = "add";
     newpass_platform.classList.add("hideFilter");
     newpass_password.classList.add("hideFilter");
