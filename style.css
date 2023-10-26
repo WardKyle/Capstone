@@ -576,7 +576,8 @@ input#newPassword--password {
   top: 170px;
 }
 .edit--password{
-  font-size: 0.8rem;
+  /* font size set to 16px to prevent mobile browsers from zooming in on focus  */
+  font-size: 16px;
   width: auto;
   visibility: hidden;
 }
@@ -637,16 +638,15 @@ input#newPassword--password {
   display: none;
 }
 .password--platform, .user--password {
-  font-size: 1.4rem;
   transition: all 0.3s ease-out;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .hover--container {
   display: flex;
   align-items: center;
   flex-direction: column;
-  min-height: 120px;
+  min-height: 100px;
   position: relative;
 }
 .user--password {
@@ -763,17 +763,15 @@ All @keyframes below
 All @media items below. Build with a mobile first design
 */
 
-@media (min-width:400px){
-  .password--platform, .user--password {
-    font-size: 1.2rem;
-  }
-}
 @media (min-width:600px){
   #filtered--list{
     align-items: center;
   }
   .password--platform, .user--password {
     font-size: 1.4rem;
+  }
+  .hover--container {
+    min-height: 120px;
   }
 }
 @media (min-width:800px){
