@@ -36,6 +36,8 @@ function axiosCall() {
 
 let formUsername, formPassword;
 function handleChange() {
+  const invalid = document.querySelector("#invalid");
+  invalid.innerHTML = "";
   let form = {};
   form.username = formUsername.value;
   form.password = formPassword.value;

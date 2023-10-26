@@ -2,7 +2,7 @@ export default function authenticate(param = 1) {
   let users;
   if (param != 1) {
     users = JSON.parse(window.localStorage.getItem("storedUsers"));
-    return 1;
+  return 1;
   }
   event.preventDefault();
   (async () => {
@@ -10,6 +10,9 @@ export default function authenticate(param = 1) {
     const signIn_info = JSON.parse(window.localStorage.getItem("form"));
     const signIn_username = signIn_info.username;
     const signIn_password = signIn_info.password;
+    const usernameField = document.querySelector("input#username");
+    const passwordField = document.querySelector("input#password");
+    const invalid = document.querySelector("#invalid");
 
     let found, user_id;
 
@@ -24,6 +27,9 @@ export default function authenticate(param = 1) {
         location.href = `${process.env.SERVER_LOCATION}/Library`;
       } else {
         //INVALID login, need to reset values still
+        usernameField.value = "";
+        passwordField.value = "";
+        invalid.innerHTML = "Invalid attempt, please try again";
       }
     } else {
       console.log("not found");
