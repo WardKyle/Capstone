@@ -7,10 +7,6 @@ import axios from "axios";
 
 const router = new Navigo("/");
 
-function storeUsers(response) {
-  response ? localStorage.setItem("storedUsers", JSON.stringify(response)) : [];
-}
-
 function hasAccess() {
   const approved = window.localStorage.getItem("user_id");
   if (approved) {
@@ -27,26 +23,11 @@ function axiosCall() {
   axios
     .get(`${process.env.PASSLOCKR_API_URL}/users`)
     .then(response => {
-      storeUsers(response.data);
+      store.Library.users = response.data;
     })
     .catch(error => {
       console.log("Error occurred: ", error);
     });
-}
-
-let formUsername, formPassword;
-function handleChange() {
-  const invalid = document.querySelector("#invalid");
-  invalid.innerHTML = "";
-  let form = {};
-  form.username = formUsername.value;
-  form.password = formPassword.value;
-  save(form);
-}
-
-function save(param) {
-  const form = JSON.stringify(param);
-  window.localStorage.setItem("form", form);
 }
 
 let count = 0;
@@ -104,7 +85,6 @@ function afterRender(page) {
       window.localStorage.setItem("page", "still loading");
       await axiosCall();
       window.localStorage.setItem("axios", "loaded");
-      authenticate("reload");
     })();
 
     wait();
@@ -112,12 +92,6 @@ function afterRender(page) {
     (function() {
       window.localStorage.setItem("page", "loaded");
       loaded();
-      formUsername = document.querySelector("#username");
-      formPassword = document.querySelector("#password");
-      let formItems = Array.from(document.querySelectorAll("input"));
-      formItems.forEach(el =>
-        el.addEventListener("input", handleChange, false)
-      );
     })();
   }
 }
