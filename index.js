@@ -19,16 +19,16 @@ function mySort(a, b) {
   return a.platform.localeCompare(b.platform);
 }
 
-function axiosCall() {
-  axios
-    .get(`${process.env.PASSLOCKR_API_URL}/users`)
-    .then(response => {
-      store.Library.users = response.data;
-    })
-    .catch(error => {
-      console.log("Error occurred: ", error);
-    });
-}
+// function axiosCall() {
+//   axios
+//     .get(`${process.env.PASSLOCKR_API_URL}/users`)
+//     .then(response => {
+//       store.Library.users = response.data;
+//     })
+//     .catch(error => {
+//       console.log("Error occurred: ", error);
+//     });
+// }
 
 let count = 0;
 function wait() {
@@ -81,10 +81,21 @@ function render(state = store.Home) {
 function afterRender(page) {
   if (page === store.Login) {
     (async () => {
-      window.localStorage.setItem("axios", "still loading");
-      window.localStorage.setItem("page", "still loading");
-      await axiosCall();
-      window.localStorage.setItem("axios", "loaded");
+      try {
+        window.localStorage.setItem("axios", "still loading");
+        window.localStorage.setItem("page", "still loading");
+        await axios
+          .get(`${process.env.PASSLOCKR_API_URL}/users`)
+          .then(response => {
+            store.Library.users = response.data;
+          })
+          .catch(error => {
+            console.log("Error occurred: ", error);
+          });
+        window.localStorage.setItem("axios", "loaded");
+      } catch (error) {
+        console.log(error);
+      }
     })();
 
     wait();
