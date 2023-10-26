@@ -13,10 +13,10 @@ export default function authenticate(param = 1) {
 
   let found, user_id;
 
-  found = users.find(
-    el => el.username === signIn_username && el.password === signIn_password
-  );
-  if (found != undefined) {
+  if (users.length > 0) {
+    found = users.find(
+      el => el.username === signIn_username && el.password === signIn_password
+    );
     (async () => {
       user_id = await found._id;
       window.localStorage.setItem("user_id", user_id);
@@ -25,5 +25,6 @@ export default function authenticate(param = 1) {
     })();
   } else {
     console.log("not found");
+    authenticate();
   }
 }
