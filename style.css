@@ -673,7 +673,6 @@ input#newPassword--password {
   color: transparent;
   font-weight: bold;
   overflow-wrap: anywhere;
-  cursor: pointer;
 }
 .hidePasswords, .hideFilter {
   opacity:0;
