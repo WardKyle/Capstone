@@ -26,6 +26,7 @@ export default state => {
             <input type="text" id="password" placeholder="password" required />
             <button id="signIn--button" onClick="authenticate()">Submit</button>
           </form>
+          <div id="invalid"></div>
         </div>
       </div>
     </section>

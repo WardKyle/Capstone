@@ -413,9 +413,14 @@ footer input, footer input:focus {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   min-width: 110px;
   border-radius: 50px;
   position: relative;
+}
+#invalid {
+  height: 20px;
+  text-align: center;
 }
 .fa-xmark {
   position: absolute;
@@ -545,12 +550,13 @@ footer p, footer a {
   letter-spacing: 1px;
   margin-block: 10px;
   transition: all 0.3s ease-out;
-  cursor: default;
+  cursor: pointer;
   margin-left: 10%;
   transition: all 0.3s ease-out;
   top: 0px;
   position: relative;
   font-size: 1.4rem;
+  z-index: 3;
 }
 #button--add {
   top: 60px;
@@ -563,11 +569,12 @@ footer p, footer a {
 }
 input#filtered--text, input#newPassword--platform, input#newPassword--password {
   width: 140px;
-  font-size: 1.0rem;
+  font-size: 16px;
   position: fixed;
   left: calc(100% - 160px);
   top: 120px;
   transition: all 0.3s ease-out;
+  z-index: 5;
 }
 input#newPassword--platform {
   top: 120px;
@@ -578,8 +585,10 @@ input#newPassword--password {
 .edit--password{
   /* font size set to 16px to prevent mobile browsers from zooming in on focus  */
   font-size: 16px;
-  width: auto;
+  width: 100%;
   visibility: hidden;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 #lock--body, #lock--top, #lock--top--circle {
   background-color: rgba(var(--mainMaroonColor), .1);
