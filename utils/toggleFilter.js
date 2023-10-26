@@ -26,7 +26,7 @@ export default function toggleFilter() {
     const render = document.querySelector("#filter--root");
     const renderIt = param.map(
       (el, index) =>
-        `<div class="hover--container"><i class="fa-solid fa-pencil" onclick="editPassword(${index})"></i><i class="fa-solid fa-trash" onclick="deletePassword(${index})"></i><i class="fa-solid fa-check fadeOut hide" onclick="submitUpdate(${index})"></i><div class="password--platform" onmouseover="viewPassword()">${el.platform}</div><div class="user--password" onclick="copyText(${index})">${el.password}</div><form autocomplete="off" onkeydown="return event.key != 'Enter';"><input type="text" class="edit--password" value="${el.password}"></form><div class="user--id" style="display:none;">${el._id}</div></div>`
+        `<div class="hover--container"><i class="fa-solid fa-pencil" onclick="editPassword(${index})"></i><i class="fa-solid fa-trash" onclick="deletePassword(${index})"></i><i class="fa-solid fa-check fadeOut hide" onclick="submitUpdate(${index})"></i><div class="password--platform" onmouseover="viewPassword()">${el.platform}</div><div class="user--password">${el.password}</div><form autocomplete="off" onkeydown="return event.key != 'Enter';"><input type="text" class="edit--password" value="${el.password}"></form><div class="user--id" style="display:none;">${el._id}</div></div>`
     );
     render.innerHTML = renderIt.toString("").replace(/,/g, "");
   }
