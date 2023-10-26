@@ -8,7 +8,11 @@ export default function authenticate(param = 1) {
   }
   event.preventDefault();
   (async () => {
-    users = await JSON.parse(window.localStorage.getItem("storedUsers"));
+    try {
+      users = await JSON.parse(window.localStorage.getItem("storedUsers"));
+    } catch (error) {
+      console.error(error);
+    }
     const signIn_info = JSON.parse(window.localStorage.getItem("form"));
     const signIn_username = signIn_info.username;
     const signIn_password = signIn_info.password;
