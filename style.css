@@ -563,7 +563,7 @@ footer p, footer a {
 }
 input#filtered--text, input#newPassword--platform, input#newPassword--password {
   width: 140px;
-  font-size: 1.4rem;
+  font-size: 1.0rem;
   position: fixed;
   left: calc(100% - 160px);
   top: 120px;
@@ -662,7 +662,13 @@ input#newPassword--password {
   font-size: 1.6rem;
   margin-left: 0%;
 }
-
+.fa-pencil {
+  font-size: 12px;
+  margin-left: 15px;
+  position: absolute;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
 /*
 All @keyframes below
 */

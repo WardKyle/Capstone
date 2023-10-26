@@ -26,7 +26,7 @@ export default function toggleFilter() {
     const render = document.querySelector("#filter--root");
     const renderIt = param.map(
       el =>
-        `<div class="hover--container"><div class="password--platform" onmouseover="viewPassword()">${el.platform}</div><div class="user--password">${el.password}</div></div>`
+        `<div class="hover--container"><div class="password--platform" onmouseover="viewPassword()">${el.platform}</div><div class="user--password">${el.password}<i class="fa-solid fa-pencil" onclick="editPassword"></i></div></div>`
     );
     render.innerHTML = renderIt.toString("").replace(/,/g, "");
   }
