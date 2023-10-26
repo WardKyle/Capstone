@@ -8,7 +8,9 @@ export default function addPassword() {
   const newPasswordPlatform = document.querySelector("#newPassword--platform");
   const newPasswordPassword = document.querySelector("#newPassword--password");
   const trimmed = addButton.innerHTML.trim();
+  const faCircle = document.querySelector(".fa-circle-xmark");
   filter.classList.toggle("hideFilter");
+  faCircle.classList.toggle("hideFilter");
   newPasswordPlatform.classList.toggle("hideFilter");
   newPasswordPassword.classList.toggle("hideFilter");
   if (trimmed === "submit") {
@@ -53,20 +55,6 @@ export default function addPassword() {
                 console.log("Error occurred: ", error);
               });
           })();
-
-          // store.Library.passwords.push(requestBody);
-          // function renderToPage(param = store.Library.passwords) {
-          //   const sorted = param.sort((a, b) =>
-          //     a.platform.localeCompare(b.platform)
-          //   );
-          //   const render = document.querySelector("#filter--root");
-          //   const renderIt = sorted.map(
-          //     (el, index) =>
-          //       `<div class="hover--container"><i class="fa-solid fa-pencil" onclick="editPassword(${index})"></i><i class="fa-solid fa-trash" onclick="deletePassword(${index})"></i><i class="fa-solid fa-check fadeOut hide" onclick="submitUpdate(${index})"></i><div class="password--platform" onmouseover="viewPassword()">${el.platform}</div><div class="user--password">${el.password}</div><form autocomplete="off" onkeydown="return event.key != 'Enter';"><input type="text" class="edit--password" placeholder="${el.password}"></form><div class="user--id" style="display:none;">${el._id}</div></div>`
-          //   );
-          //   render.innerHTML = renderIt.toString("").replace(/,/g, "");
-          // }
-          // renderToPage();
         })
         .catch(error => {
           console.log("Error occurred: ", error);
