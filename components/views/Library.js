@@ -5,12 +5,16 @@ import toggleFilter from "../../utils/toggleFilter";
 import editPassword from "../../utils/editPassword";
 import submitUpdate from "../../utils/submitUpdate";
 import deletePassword from "../../utils/deletePassword";
+import clearFilter from "../../utils/clearFilter";
+import copyText from "../../utils/copyText";
 window.viewPassword = showPassword;
 window.addNew = addPassword;
 window.toggleFilterList = toggleFilter;
 window.editPassword = editPassword;
 window.submitUpdate = submitUpdate;
 window.deletePassword = deletePassword;
+window.clearFilter = clearFilter;
+window.copyText = copyText;
 
 export default state => {
   return html`
@@ -22,6 +26,7 @@ export default state => {
       <div id="lock--top"></div>
       <div id="lock--top--circle"></div>
       <div id="filtered--list" class="hideFilter">
+        <i class="fa-solid fa-circle-xmark" onclick="clearFilter()"></i>
         <form autocomplete="off" onkeydown="return event.key != 'Enter';">
           <input type="text" id="filtered--text" placeholder="filter" />
           <input

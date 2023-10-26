@@ -19,9 +19,15 @@ export default function submitUpdate(i) {
   textField[i].style.visibility = "hidden";
   password[i].style.display = "block";
 
-  if (thisUpdate != null && thisUpdate != "") {
-    const arr = store.Library.passwords.filter(el => el._id === thisID);
-    arr.password = thisUpdate;
+  if (
+    thisUpdate != null &&
+    thisUpdate != "" &&
+    thisUpdate != password[i].innerHTML
+  ) {
+    store.Library.passwords.map(el => {
+      el._id === thisID ? (el.password = thisUpdate) : "";
+    });
+
     password[i].innerHTML = thisUpdate;
 
     axios

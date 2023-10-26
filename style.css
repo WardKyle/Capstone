@@ -382,6 +382,7 @@ footer input, footer input:focus {
   text-align: center;
   border-radius: 30px;
   max-width: 300px;
+  font-size: 16px;
 }
 #signIn--screen {
   width: 100%;
@@ -582,6 +583,16 @@ input#newPassword--platform {
 input#newPassword--password {
   top: 170px;
 }
+.fa-circle-xmark {
+  z-index: 6;
+  font-size: 14px;
+  transition: all .3s ease-out;
+  position: fixed;
+  top: 202px;
+  left: calc(100% - 58px);
+  color: black;
+  cursor: pointer;
+}
 .edit--password{
   /* font size set to 16px to prevent mobile browsers from zooming in on focus  */
   font-size: 16px;
@@ -662,6 +673,7 @@ input#newPassword--password {
   color: transparent;
   font-weight: bold;
   overflow-wrap: anywhere;
+  cursor: pointer;
 }
 .hidePasswords, .hideFilter {
   opacity:0;

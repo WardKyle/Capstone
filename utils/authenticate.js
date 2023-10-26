@@ -1,8 +1,10 @@
+import { setTimeout } from "timers/promises";
+
 export default function authenticate(param = 1) {
   let users;
   if (param != 1) {
     users = JSON.parse(window.localStorage.getItem("storedUsers"));
-  return 1;
+    return 1;
   }
   event.preventDefault();
   (async () => {
@@ -23,17 +25,17 @@ export default function authenticate(param = 1) {
       if (found != undefined) {
         user_id = await found._id;
         window.localStorage.setItem("user_id", user_id);
-        await toggleSignIn();
         location.href = `${process.env.SERVER_LOCATION}/Library`;
       } else {
-        //INVALID login, need to reset values still
         usernameField.value = "";
         passwordField.value = "";
         invalid.innerHTML = "Invalid attempt, please try again";
       }
     } else {
       console.log("not found");
-      authenticate();
+      setTimeout(() => {
+        authenticate();
+      }, 500);
     }
   })();
 }
