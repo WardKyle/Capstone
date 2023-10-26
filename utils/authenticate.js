@@ -37,9 +37,7 @@ export default function authenticate(param = 1) {
       }
     } else {
       console.log("not found");
-      setTimeout(() => {
-        authenticate();
-      }, 500);
+      authenticate();
     }
   })();
 }
