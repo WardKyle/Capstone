@@ -105,16 +105,20 @@ router.hooks({
     switch (view) {
       case "Home":
         (async () => {
-          axios
-            .get(`${process.env.PASSLOCKR_API_URL}/status`)
-            .then(response => {
-              console.log(response.data.message);
-              done();
-            })
-            .catch(error => {
-              console.log("Error occurred: ", error);
-              done();
-            });
+          try {
+            axios
+              .get(`${process.env.PASSLOCKR_API_URL}/status`)
+              .then(response => {
+                console.log(response.data.message);
+                done();
+              })
+              .catch(error => {
+                console.log("Error occurred: ", error);
+                done();
+              });
+          } catch (error) {
+            console.log(error);
+          }
         })();
         break;
       case "Library":
