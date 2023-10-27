@@ -19,17 +19,6 @@ function mySort(a, b) {
   return a.platform.localeCompare(b.platform);
 }
 
-// function axiosCall() {
-//   axios
-//     .get(`${process.env.PASSLOCKR_API_URL}/users`)
-//     .then(response => {
-//       store.Library.users = response.data;
-//     })
-//     .catch(error => {
-//       console.log("Error occurred: ", error);
-//     });
-// }
-
 let count = 0;
 function wait() {
   const waitingText = document.querySelector("#signIn");
@@ -114,6 +103,18 @@ router.hooks({
         ? capitalize(params.data.view)
         : "Home";
     switch (view) {
+      case "Home":
+        axios
+          .get(`${process.env.PASSLOCKR_API_URL}/status`)
+          .then(response => {
+            console.log(response.data.message);
+            done();
+          })
+          .catch(error => {
+            console.log("Error occurred: ", error);
+            done();
+          });
+        break;
       case "Library":
         (async () => {
           await axios
