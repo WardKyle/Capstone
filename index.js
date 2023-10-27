@@ -51,17 +51,6 @@ function loaded() {
   }
 }
 
-async function waiting() {
-  await axios
-    .get(`${process.env.PASSLOCKR_API_URL}/status`)
-    .then(response => {
-      console.log(response.data.message);
-    })
-    .catch(error => {
-      console.log("Error occurred: ", error);
-    });
-}
-
 function render(state = store.Home) {
   let renderThis = `${Header(state)} ${Main(state)}
   ${Footer()}`;
@@ -114,9 +103,6 @@ router.hooks({
         ? capitalize(params.data.view)
         : "Home";
     switch (view) {
-      case "Home":
-        waiting();
-        break;
       case "Library":
         (async () => {
           await axios
