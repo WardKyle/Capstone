@@ -10,7 +10,6 @@ export default function authenticate() {
   const signIn_password = passwordField.value;
   const invalid = document.querySelector("#invalid");
 
-  console.log(users);
   let found, user_id;
 
   if (users != null && users != undefined) {
@@ -18,6 +17,7 @@ export default function authenticate() {
       el => el.username === signIn_username && el.password === signIn_password
     );
     if (found != undefined) {
+      window.localStorage.setItem("username", found.username);
       user_id = found._id;
       window.localStorage.setItem("user_id", user_id);
       location.href = `${process.env.SERVER_LOCATION}/Library`;

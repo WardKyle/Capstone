@@ -16,12 +16,12 @@ export default function addPassword() {
   if (trimmed === "submit") {
     const platformValue = newPasswordPlatform.value;
     const passwordValue = newPasswordPassword.value;
-    const userName = JSON.parse(window.localStorage.getItem("form")).username;
+    const username = window.localStorage.getItem("username");
     const userID = window.localStorage.getItem("user_id");
     if ((platformValue != "") & (passwordValue != "")) {
       const requestBody = {
         user_id: userID,
-        username: userName,
+        username: username,
         platform: platformValue,
         password: passwordValue
       };
@@ -65,4 +65,5 @@ export default function addPassword() {
     newPasswordPassword.value = "";
   }
   addButton.innerHTML = trimmed === "add" ? "submit" : "add";
+  console.log(trimmed);
 }
