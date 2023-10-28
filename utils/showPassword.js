@@ -1,4 +1,4 @@
-export default function showPassword() {
+export function showPassword() {
   const hoverContainer = document.querySelectorAll(".hover--container");
   const platformList = document.querySelectorAll(".password--platform");
   const passwordList = document.querySelectorAll(".user--password");

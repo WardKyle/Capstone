@@ -1,8 +1,7 @@
 import html from "html-literal";
-import toggleSignIn from "../../utils/toggleSignIn";
-import authenticate from "../../utils/authenticate";
-window.toggleSignIn = toggleSignIn;
-window.authenticate = authenticate;
+import * as js from "../../utils";
+window.toggleSignIn = js.toggleSignIn;
+window.authenticate = js.authenticate;
 
 export default state => {
   return html`
@@ -14,7 +13,11 @@ export default state => {
           alt="PassLockr Logo"
       /></a>
       <h1>Welcome to PassLockr</h1>
-      <div id="signIn">Loading Users</div>
+      <div id="signIn">
+        <div id="layerOne"><div id="layerTwo"></div></div>
+
+        Loading Users
+      </div>
       <div id="forgotPassword">Forgot Password</div>
       <div class="hideSignIn" id="signIn--screen">
         <div id="signIn--box">
