@@ -1,4 +1,4 @@
-export default function mobileHover() {
+export function mobileHover() {
   const hoverOver = document.querySelectorAll(".flex-row");
   hoverOver.forEach(el => {
     el.addEventListener("mouseover", () => {

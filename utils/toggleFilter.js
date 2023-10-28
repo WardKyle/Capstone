@@ -1,6 +1,6 @@
 import * as state from "../store/index.js";
 
-export default function toggleFilter() {
+export function toggleFilter() {
   const lockTop = document.querySelector("#lock--top");
   const lockTopInner = document.querySelector("#lock--top--circle");
   lockTop.classList.toggle("open--lock");
@@ -19,18 +19,9 @@ export default function toggleFilter() {
     const filterArr = state.Library.passwords.filter(el =>
       el.platform.toLowerCase().includes(formText.value.toLowerCase())
     );
-    renderToPage(filterArr);
+    renderPasswords(filterArr);
   }
-
-  function renderToPage(param = state.Library.passwords) {
-    const render = document.querySelector("#filter--root");
-    const renderIt = param.map(
-      (el, index) =>
-        `<div class="hover--container"><i class="fa-solid fa-pencil" onclick="editPassword(${index})"></i><i class="fa-solid fa-trash" onclick="deletePassword(${index})"></i><i class="fa-solid fa-check fadeOut hide" onclick="submitUpdate(${index})"></i><div class="password--platform" onmouseover="viewPassword()">${el.platform}</div><div class="user--password">${el.password}</div><form autocomplete="off" onkeydown="return event.key != 'Enter';"><input type="text" class="edit--password" value="${el.password}"></form><div class="user--id" style="display:none;">${el._id}</div></div>`
-    );
-    render.innerHTML = renderIt.toString("").replace(/,/g, "");
-  }
-  renderToPage();
+  renderPasswords();
 
   const filterList = document.querySelector("#filtered--list");
   const filterButton = document.querySelector(".library--button:nth-child(1)");

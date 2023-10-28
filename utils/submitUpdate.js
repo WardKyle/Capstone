@@ -1,12 +1,12 @@
 import * as store from "../store/index";
 import axios from "axios";
 
-export default function submitUpdate(i) {
+export function submitUpdate(i) {
   const pencils = document.querySelectorAll(".fa-pencil");
   const checks = document.querySelectorAll(".fa-check");
   const textField = document.querySelectorAll(".edit--password");
   const password = document.querySelectorAll(".user--password");
-  const allSubmitted = document.querySelectorAll(".user--id");
+  const allSubmitted = document.querySelectorAll(".submission--id");
   const thisID = allSubmitted[i].innerHTML;
   const thisUpdate = textField[i].value;
 

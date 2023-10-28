@@ -1,6 +1,6 @@
 import * as store from "../store/index";
 
-export default function authenticate() {
+export function authenticate() {
   event.preventDefault();
 
   const users = store.Library.users;

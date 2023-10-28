@@ -1,6 +1,6 @@
 import html from "html-literal";
-import mobileHover from "../../utils/mobileHover.js";
-window.hoverTrick = mobileHover;
+import * as js from "../../utils";
+window.hoverTrick = js.mobileHover;
 
 export default () => html`
   <section class="contact">

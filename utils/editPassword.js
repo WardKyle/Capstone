@@ -1,4 +1,4 @@
-export default function editPassword(i) {
+export function editPassword(i) {
   const pencils = document.querySelectorAll(".fa-pencil");
   const checks = document.querySelectorAll(".fa-check");
   const textField = document.querySelectorAll(".edit--password");

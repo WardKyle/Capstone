@@ -1,18 +1,13 @@
 import html from "html-literal";
-import showPassword from "../../utils/showPassword";
-import addPassword from "../../utils/addPassword";
-import toggleFilter from "../../utils/toggleFilter";
-import editPassword from "../../utils/editPassword";
-import submitUpdate from "../../utils/submitUpdate";
-import deletePassword from "../../utils/deletePassword";
-import clearFilter from "../../utils/clearFilter";
-window.viewPassword = showPassword;
-window.addNew = addPassword;
-window.toggleFilterList = toggleFilter;
-window.editPassword = editPassword;
-window.submitUpdate = submitUpdate;
-window.deletePassword = deletePassword;
-window.clearFilter = clearFilter;
+import * as js from "../../utils";
+window.viewPassword = js.showPassword;
+window.addNew = js.addPassword;
+window.toggleFilterList = js.toggleFilter;
+window.editPassword = js.editPassword;
+window.submitUpdate = js.submitUpdate;
+window.deletePassword = js.deletePassword;
+window.clearFilter = js.clearFilter;
+window.renderPasswords = js.renderPasswords;
 
 export default state => {
   return html`

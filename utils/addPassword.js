@@ -2,7 +2,7 @@ import axios from "axios";
 import * as store from "../store/index.js";
 import toggleFilter from "./toggleFilter.js";
 
-export default function addPassword() {
+export function addPassword() {
   const filter = document.querySelector("#filtered--text");
   const addButton = document.querySelector("#button--add");
   const newPasswordPlatform = document.querySelector("#newPassword--platform");
@@ -40,16 +40,7 @@ export default function addPassword() {
                   a.platform.localeCompare(b.platform)
                 );
                 store.Library.passwords = alpha;
-
-                function renderToPage(param) {
-                  const render = document.querySelector("#filter--root");
-                  const renderIt = param.map(
-                    (el, index) =>
-                      `<div class="hover--container"><i class="fa-solid fa-pencil" onclick="editPassword(${index})"></i><i class="fa-solid fa-trash" onclick="deletePassword(${index})"></i><i class="fa-solid fa-check fadeOut hide" onclick="submitUpdate(${index})"></i><div class="password--platform" onmouseover="viewPassword()">${el.platform}</div><div class="user--password">${el.password}</div><form autocomplete="off" onkeydown="return event.key != 'Enter';"><input type="text" class="edit--password" value="${el.password}"></form><div class="user--id" style="display:none;">${el._id}</div></div>`
-                  );
-                  render.innerHTML = renderIt.toString("").replace(/,/g, "");
-                }
-                renderToPage(alpha);
+                renderPasswords(alpha);
               })
               .catch(error => {
                 console.log("Error occurred: ", error);
@@ -65,5 +56,4 @@ export default function addPassword() {
     newPasswordPassword.value = "";
   }
   addButton.innerHTML = trimmed === "add" ? "submit" : "add";
-  console.log(trimmed);
 }

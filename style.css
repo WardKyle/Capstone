@@ -70,7 +70,7 @@ header {
   font-size: 24px;
   text-align: center;
 }
-#forgotPassword, #signIn {
+#forgotPassword, #signIn, #layerOne, #layerTwo {
   border: 1px solid #000;
   border-radius: 40px;
   min-width: 100px;
@@ -84,9 +84,26 @@ header {
   transition: all 0.3s ease-out;
   cursor: default;
 }
-#signIn {
+#layerOne, #layerTwo {
+  background-color: transparent;
+  position: absolute;
+  margin: 0;
   background-color: rgba(var(--mainMaroonColor),0.6);
+  z-index: -2;
+  overflow: hidden;
+}
+#layerTwo {
+  z-index: -1;
+  background-color: rgba(var(--mainMaroonColor));
+  opacity: 0.4;
+  animation: loadingAbstract 5s infinite linear;
+  min-width: 0px;
+  border: none;
+}
+#signIn {
+  background-color: transparent;
   color: white;
+  border: none;
 }
 #signIn:hover {
   background-color: rgba(var(--mainMaroonColor),1);
@@ -702,10 +719,24 @@ input#newPassword--password {
 .fa-trash {
   margin-left: calc(100%);
 }
+.fade-in-up {
+  animation: 0.90s both fadeInUp;
+}
+
 /*
 All @keyframes below
 */
 
+@keyframes fadeInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 @keyframes homeAbstract {
   0% {
     opacity: 0.4;
@@ -720,6 +751,27 @@ All @keyframes below
     opacity: 0.3;
     right: 0;
     width: 0px;
+  }
+}
+@keyframes loadingAbstract {
+  0% {
+    opacity: 0.4;
+    width: 40px;
+  }
+  10% {
+
+  }
+  20% {
+    height: inherit;
+    opacity: 0.4;
+    width: 400px;
+  }
+  80%{
+    width: 50px;
+  }
+  100% {
+    width: 0%;
+    margin-left: 500px;
   }
 }
 @keyframes slider {

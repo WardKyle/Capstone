@@ -2,7 +2,7 @@ import { Header, Nav, Main, Footer } from "./components";
 import * as store from "./store";
 import Navigo from "navigo";
 import { capitalize } from "lodash";
-import * as utils from "./utils";
+import * as js from "./utils";
 import axios from "axios";
 
 const router = new Navigo("/");
@@ -19,34 +19,36 @@ function mySort(a, b) {
   return a.platform.localeCompare(b.platform);
 }
 
-let count = 0;
-function wait() {
-  const waitingText = document.querySelector("#signIn");
-  let waitTimeOut = setTimeout(() => {
-    count++;
-    waitingText.innerHTML += ".";
-    if (count === 6) {
-      waitingText.innerHTML = "Loading Users";
-      count = 0;
-    }
-    wait();
-  }, 500);
-  waitingText.innerHTML.includes("Loading User") ? waitTimeOut : clearID;
-  const clearID = clearTimeout(waitTimeOut);
+function asynchronous() {
+  try {
+    axios
+      .get(`${process.env.PASSLOCKR_API_URL}/users`)
+      .then(response => {
+        store.Library.users = response.data;
+      })
+      .catch(error => {
+        console.log("Error occurred: ", error);
+      });
+    store.Login.axios = "Loaded";
+    loaded();
+  } catch (error) {
+    console.log(error);
+  }
+}
+async function asyncCall() {
+  const result = await asynchronous();
 }
 
 function loaded() {
-  const axios = window.localStorage.getItem("axios");
-  const page = window.localStorage.getItem("page");
+  const axios = store.Login.axios;
+  const page = store.Login.page;
   let timeoutID = setTimeout(() => {
     loaded();
   }, 500);
-
-  axios === "loaded" && page === "loaded" ? setButton() : timeoutID;
-
+  axios === "Loaded" && page === "Loaded" ? setButton() : timeoutID;
   function setButton() {
     const buttonText = document.querySelector("#signIn");
-    buttonText.innerHTML = `<div onClick="toggleSignIn()">Sign In</div>`;
+    buttonText.innerHTML = `<div id="layerOne"></div><div onClick="toggleSignIn()">Sign In</div>`;
     clearTimeout(timeoutID);
   }
 }
@@ -59,40 +61,21 @@ function render(state = store.Home) {
     : (renderThis += `${Nav(store.Links, state)}`);
   document.querySelector("#root").innerHTML = renderThis;
   router.updatePageLinks();
-  if (state == store.Home) {
-    utils.playSlider();
-    utils.homeAbstract();
-    utils.scrollDetect();
-    utils.marketingAnim();
-  }
   afterRender(state);
 }
 function afterRender(page) {
+  if (page == store.Home) {
+    js.playSlider();
+    js.homeAbstract();
+    js.scrollDetect();
+    js.marketingAnim();
+  }
+  if (page === store.Contact) {
+    js.fadeInUp(".row1");
+  }
   if (page === store.Login) {
-    (async () => {
-      try {
-        window.localStorage.setItem("axios", "still loading");
-        window.localStorage.setItem("page", "still loading");
-        await axios
-          .get(`${process.env.PASSLOCKR_API_URL}/users`)
-          .then(response => {
-            store.Library.users = response.data;
-          })
-          .catch(error => {
-            console.log("Error occurred: ", error);
-          });
-        window.localStorage.setItem("axios", "loaded");
-      } catch (error) {
-        console.log(error);
-      }
-    })();
-
-    wait();
-
-    (function() {
-      window.localStorage.setItem("page", "loaded");
-      loaded();
-    })();
+    asyncCall();
+    store.Login.page = "Loaded";
   }
 }
 
