@@ -159,6 +159,9 @@ header {
   font-weight: bold;
   font-size: 18px;
   text-align: center;
+  /* margin-top: 0px;
+  opacity: 1; */
+  transition: all 0.9s ease-out;
 }
 .options p {
   padding: 10px 10px 5px 10px;
@@ -720,7 +723,7 @@ input#newPassword--password {
   margin-left: calc(100%);
 }
 .fade-in-up {
-  animation: 0.90s both fadeInUp;
+  animation: 0.70s both fadeInUp;
 }
 
 /*
@@ -729,7 +732,7 @@ All @keyframes below
 
 @keyframes fadeInUp {
   from {
-    transform: translateY(50px);
+    transform: translateY(80px);
     opacity: 0;
   }
   to {
