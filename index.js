@@ -69,9 +69,12 @@ function afterRender(page) {
     js.homeAbstract();
     js.scrollDetect();
     js.marketingAnim();
+    js.fadeInUp("#slide1");
+    js.fadeInUp(".bottom_right ol");
+    js.fadeInUp(".row_col");
   }
   if (page === store.Contact) {
-    js.fadeInUp(".row1");
+    js.fadeInUp(".fa-solid");
   }
   if (page === store.Login) {
     asyncCall();
