@@ -71,10 +71,10 @@ function afterRender(page) {
     js.marketingAnim();
     js.fadeInUp("#slide1");
     js.fadeInUp(".bottom_right ol");
-    js.fadeInUp(".row_col");
+    js.fadeInUp(".doubleStack .row_col");
   }
   if (page === store.Contact) {
-    js.fadeInUp(".fa-solid");
+    js.fadeInUp(".row1");
   }
   if (page === store.Login) {
     asyncCall();
