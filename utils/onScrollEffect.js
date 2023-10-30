@@ -7,7 +7,7 @@ export function fadeInUp(element, param = window) {
     }
   });
   const height = window.navigator.userAgentData.mobile
-    ? window.screen.height
+    ? Screen.height
     : window.innerHeight;
   param = param === window ? window : document.querySelector(param);
   param.addEventListener("scroll", function(event) {
