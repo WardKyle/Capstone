@@ -70,11 +70,9 @@ function afterRender(page) {
     js.scrollDetect();
     js.marketingAnim();
     js.fadeInUp("#slide1");
-    js.fadeInUp(".bottom_right ol");
-    js.fadeInUp(".doubleStack .row_col");
   }
   if (page === store.Contact) {
-    js.fadeInUp(".row1");
+    js.fadeInUp(".options .row1");
   }
   if (page === store.Login) {
     asyncCall();
