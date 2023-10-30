@@ -724,7 +724,7 @@ input#newPassword--password {
   margin-left: calc(100%);
 }
 .fade-in-up {
-  animation: 1.20s both fadeInUp;
+  animation: 0.90s both fadeInUp;
 }
 
 /*
