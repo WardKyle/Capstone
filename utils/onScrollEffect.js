@@ -1,15 +1,15 @@
 export function fadeInUp(element, param = window) {
   const containers = document.querySelectorAll(element);
   const scrollVar = 50;
-  const height = window.navigator.userAgentData.mobile
-    ? screen.height
-    : window.innerHeight;
-  param = param === window ? window : document.querySelector(param);
   containers.forEach(el => {
     if (el.offsetTop <= window.innerHeight) {
       el.style.opacity = 1;
     }
   });
+  const height = window.navigator.userAgentData.mobile
+    ? window.screen.height
+    : window.innerHeight;
+  param = param === window ? window : document.querySelector(param);
   param.addEventListener("scroll", function(event) {
     containers.forEach(function(el) {
       const thisScroll = el.offsetTop - height;
