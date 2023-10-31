@@ -65,11 +65,11 @@ function render(state = store.Home) {
 }
 function afterRender(page) {
   if (page == store.Home) {
-    // js.playSlider();
+    js.playSlider();
     js.homeAbstract();
     js.scrollDetect();
     js.marketingAnim();
-    js.fadeInUp("#slide1");
+    js.fadeInUp()
   }
   if (page === store.Contact) {
     js.fadeInUp(".options .row1");
