@@ -501,11 +501,13 @@ footer p, footer a {
   border: none;
 }
 #testimonials {
-  height: 300px;
+  height: 800px;
   display: flex;
   text-align: center;
   align-items: center;
-  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(97,3,69,1) 100%);
+  background: linear-gradient(90deg, rgba(97,3,69,0.2) 0%, rgba(255,255,255,1) 20%, white 80%, rgba(97,3,69,0.2) 100%);
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 #testimonials p {
   font-size: 20px;
@@ -513,9 +515,16 @@ footer p, footer a {
   padding-right: 20px;
   position: relative;
 }
-#slide1, #slide2, #slide3, #slide4 {
+#slide1, #slide2, #slide3, #slide4, #fade-in-slide {
   width:100%;
   font-weight: bold;
+  height: 100px;
+}
+.fa-star {
+  color: rgb(var(--mainLightBlueColor));
+}
+.five--stars {
+  opacity: 0;
 }
 .playSlider{
   animation: slider 6000ms infinite ease-out;
@@ -728,9 +737,6 @@ input#newPassword--password {
 .fade-in-up {
   animation: 0.90s both fadeInUp;
 }
-.fade-in-up--slider {
-  animation: 2s both fadeInUp--slider;
-}
 
 /*
 All @keyframes below
@@ -744,19 +750,6 @@ All @keyframes below
   to {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-@keyframes fadeInUp--slider {
-  0% {
-    transform: translateY(80px);
-    opacity: 0;
-  }
-  90% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
 @keyframes homeAbstract {

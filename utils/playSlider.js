@@ -3,7 +3,6 @@ export function playSlider() {
   const testimonial2 = document.querySelector("#slide2");
   const testimonial3 = document.querySelector("#slide3");
   const testimonial4 = document.querySelector("#slide4");
-
   let loop = () => {
     void testimonial1.offsetWidth;
     testimonial1.classList.add("playSlider");

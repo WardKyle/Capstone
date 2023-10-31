@@ -39,15 +39,39 @@ export default () => html`
         <p id="slide1">
           "PassLockr is the best password management product yet!"
         </p>
-        <p id="slide2" style="display:none;">
+        <p id="slide2" style="display:none">
           "I have already recommended their product to my entire family."
         </p>
-        <p id="slide3" style="display:none;">
+        <p id="slide3" style="display:none">
           "Life. Saver. And not the sugar coated kind."
         </p>
-        <p id="slide4" style="display:none;">
+        <p id="slide4" style="display:none">
           "I was today years old when I found my new best friend."
         </p>
+        <div class="five--stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+          ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+          ><i class="fa-solid fa-star"></i>
+          <h4>"Game changer"</h4>
+        </div>
+        <div class="five--stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+          ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+          ><i class="fa-solid fa-star"></i>
+          <h4>"Love.Love.Love."</h4>
+        </div>
+        <div class="five--stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+          ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+          ><i class="fa-solid fa-star"></i>
+          <h4>"The best yet"</h4>
+        </div>
+        <div class="five--stars">
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+          ><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i
+          ><i class="fa-solid fa-star"></i>
+          <h4>"Can't beat free"</h4>
+        </div>
       </div>
     </section>
   </section>
