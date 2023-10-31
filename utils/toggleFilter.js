@@ -36,6 +36,7 @@ export function toggleFilter() {
 
   if (buttonText === "view all") {
     filterButton.innerHTML = "close";
+    filterList.scrollTo(0, 0);
   } else {
     filterButton.innerHTML = "view all";
     filterButton.classList.remove("hideFilter");

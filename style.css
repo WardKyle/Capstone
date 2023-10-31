@@ -513,7 +513,6 @@ footer p, footer a {
 #slide1, #slide2, #slide3, #slide4 {
   width:100%;
   font-weight: bold;
-  opacity: 0;
 }
 .playSlider{
   animation: slider 6000ms infinite ease-out;
@@ -726,6 +725,9 @@ input#newPassword--password {
 .fade-in-up {
   animation: 0.90s both fadeInUp;
 }
+.fade-in-up--slider {
+  animation: 2s both fadeInUp--slider;
+}
 
 /*
 All @keyframes below
@@ -739,6 +741,19 @@ All @keyframes below
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+@keyframes fadeInUp--slider {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  90% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes homeAbstract {

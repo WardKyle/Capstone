@@ -29,14 +29,14 @@ function asynchronous() {
       .catch(error => {
         console.log("Error occurred: ", error);
       });
-    store.Login.axios = "Loaded";
-    loaded();
   } catch (error) {
     console.log(error);
   }
 }
 async function asyncCall() {
-  const result = await asynchronous();
+  await asynchronous();
+  store.Login.axios = "Loaded";
+  loaded();
 }
 
 function loaded() {
@@ -65,7 +65,7 @@ function render(state = store.Home) {
 }
 function afterRender(page) {
   if (page == store.Home) {
-    js.playSlider();
+    // js.playSlider();
     js.homeAbstract();
     js.scrollDetect();
     js.marketingAnim();
@@ -77,6 +77,13 @@ function afterRender(page) {
   if (page === store.Login) {
     asyncCall();
     store.Login.page = "Loaded";
+  }
+  if (page === store.Library) {
+    localStorage.getItem("user_id") === null ||
+    localStorage.getItem("user_id") === ""
+      ? (location.href = `${process.env.SERVER_LOCATION}/Home`)
+      : "";
+    return;
   }
 }
 
