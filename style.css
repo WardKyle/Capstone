@@ -513,6 +513,7 @@ footer p, footer a {
 #slide1, #slide2, #slide3, #slide4 {
   width:100%;
   font-weight: bold;
+  opacity: 1;
 }
 .playSlider{
   animation: slider 6000ms infinite ease-out;
