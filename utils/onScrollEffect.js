@@ -22,16 +22,7 @@ export function fadeInUp(element, param = window) {
           thisScroll >= 0 &&
           opacity != 1
         ) {
-          if (element === "#slide1") {
-            el.classList.add("fade-in-up--slider");
-            setTimeout(() => {
-              js.playSlider();
-              el.classList.remove("fade-in-up--slider");
-              el.style.opacity = 1;
-            }, 2000);
-          } else {
-            el.classList.add("fade-in-up");
-          }
+          el.classList.add("fade-in-up");
         }
       } else {
         if (
