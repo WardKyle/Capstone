@@ -69,7 +69,7 @@ function afterRender(page) {
     js.homeAbstract();
     js.scrollDetect();
     js.marketingAnim();
-    js.fadeInUp()
+    js.fadeInUp(".bottom_right ol");
   }
   if (page === store.Contact) {
     js.fadeInUp(".options .row1");
