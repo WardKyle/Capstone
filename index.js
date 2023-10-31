@@ -70,6 +70,7 @@ function afterRender(page) {
     js.scrollDetect();
     js.marketingAnim();
     js.fadeInUp(".bottom_right ol");
+    js.fadeInUp(".five--stars");
   }
   if (page === store.Contact) {
     js.fadeInUp(".options .row1");

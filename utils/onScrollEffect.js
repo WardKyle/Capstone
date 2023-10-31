@@ -2,7 +2,8 @@ import * as js from "../utils";
 
 export function fadeInUp(element, param = window) {
   const containers = document.querySelectorAll(element);
-  const scrollVar = 50;
+  //scrollVar changed from 50
+  const scrollVar = 40;
   const windowHeight = document.documentElement.clientHeight;
   containers.forEach(el => {
     const combinedHeight = el.offsetTop + el.offsetHeight;
@@ -11,7 +12,8 @@ export function fadeInUp(element, param = window) {
     }
   });
   param = param === window ? window : document.querySelector(param);
-  param.addEventListener("scroll", function(event) {
+
+  function scrollFunction() {
     containers.forEach(function(el) {
       const combinedHeight = el.offsetTop + el.offsetHeight;
       const thisScroll = combinedHeight - windowHeight;
@@ -34,5 +36,7 @@ export function fadeInUp(element, param = window) {
         }
       }
     });
-  });
+  }
+
+  param.addEventListener("scroll", scrollFunction);
 }
