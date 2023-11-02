@@ -2,7 +2,6 @@ import * as js from "../utils";
 
 export function fadeInUp(element, param = window) {
   const containers = document.querySelectorAll(element);
-  //scrollVar changed from 50
   const scrollVar = 40;
   const windowHeight = document.documentElement.clientHeight;
   containers.forEach(el => {
