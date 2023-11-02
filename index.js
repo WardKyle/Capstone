@@ -19,12 +19,14 @@ function mySort(a, b) {
   return a.platform.localeCompare(b.platform);
 }
 
-function asynchronous() {
+async function asynchronous() {
   try {
-    axios
+    await axios
       .get(`${process.env.PASSLOCKR_API_URL}/users`)
       .then(response => {
         store.Library.users = response.data;
+        store.Login.axios = "Loaded";
+        loaded();
       })
       .catch(error => {
         console.log("Error occurred: ", error);
@@ -32,11 +34,6 @@ function asynchronous() {
   } catch (error) {
     console.log(error);
   }
-}
-async function asyncCall() {
-  await asynchronous();
-  store.Login.axios = "Loaded";
-  loaded();
 }
 
 function loaded() {
@@ -76,7 +73,7 @@ function afterRender(page) {
     js.fadeInUp(".options .row1");
   }
   if (page === store.Login) {
-    asyncCall();
+    asynchronous();
     store.Login.page = "Loaded";
   }
   if (page === store.Library) {
