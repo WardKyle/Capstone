@@ -1,5 +1,3 @@
-//Only exporting what is needed for root index.js
-
 export { addPassword } from "./addPassword";
 export { authenticate } from "./authenticate";
 export { clearFilter } from "./clearFilter";
@@ -16,3 +14,4 @@ export { submitUpdate } from "./submitUpdate";
 export { renderPasswords } from "./renderPasswords";
 export { toggleFilter } from "./toggleFilter";
 export { toggleSignIn } from "./toggleSignIn";
+export { autoGenerate } from "./generateStrongPassword";

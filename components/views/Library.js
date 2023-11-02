@@ -8,6 +8,7 @@ window.submitUpdate = js.submitUpdate;
 window.deletePassword = js.deletePassword;
 window.clearFilter = js.clearFilter;
 window.renderPasswords = js.renderPasswords;
+window.generateStrongPassword = js.autoGenerate;
 
 export default state => {
   return html`
@@ -20,6 +21,10 @@ export default state => {
       <div id="lock--top--circle"></div>
       <div id="filtered--list" class="hideFilter">
         <i class="fa-solid fa-circle-xmark" onclick="clearFilter()"></i>
+        <i
+          class="fa-solid fa-shuffle hideFilter"
+          onclick="generateStrongPassword()"
+        ></i>
         <form autocomplete="off" onkeydown="return event.key != 'Enter';">
           <input type="text" id="filtered--text" placeholder="filter" />
           <input
