@@ -199,6 +199,17 @@ header {
   position: relative;
   color: rgb(var(--mainLightBlueColor))
 }
+.fa-shuffle {
+  right: 0px;
+  position: fixed;
+  left: calc(100% - 40px);
+  top: 177px;
+  margin-block: 5px;
+  color: black;
+  z-index: 6;
+  font-size: 16px;
+  cursor: pointer;
+}
 .contact .bottom_right {
   min-height: 300px;
   height: auto;
@@ -943,12 +954,16 @@ All @media items below. Build with a mobile first design
     left: calc(100% - 280px);
   }
   .open--lock {
-    transform: rotatey(180deg);
+    transform: rotateY(180deg);
     margin-left: 120px;
     margin-bottom: 20px;
   }
   .fa-circle-xmark {
     top: 202px;
     left: calc(100% - 58px);
+  }
+  .fa-shuffle {
+    top: 227px;
+    left: calc(100% - 60px);
   }
 }

@@ -3,6 +3,8 @@ import * as js from "../utils";
 
 export function renderPasswords(param = state.Library.passwords) {
   function renderToPage(param) {
+    const filterList = document.querySelector("#filtered--list");
+    filterList.scrollTo(0, 0);
     const render = document.querySelector("#filter--root");
     const renderIt = param.map(
       (el, index) =>

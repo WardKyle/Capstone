@@ -9,8 +9,10 @@ export function addPassword() {
   const newPasswordPassword = document.querySelector("#newPassword--password");
   const trimmed = addButton.innerHTML.trim();
   const faCircle = document.querySelector(".fa-circle-xmark");
+  const faShuffle = document.querySelector(".fa-shuffle");
   filter.classList.toggle("hideFilter");
   faCircle.classList.toggle("hideFilter");
+  faShuffle.classList.toggle("hideFilter");
   newPasswordPlatform.classList.toggle("hideFilter");
   newPasswordPassword.classList.toggle("hideFilter");
   if (trimmed === "submit") {
