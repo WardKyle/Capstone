@@ -21,7 +21,7 @@ function mySort(a, b) {
 
 async function asynchronous() {
   try {
-    await axios
+    axios
       .get(`${process.env.PASSLOCKR_API_URL}/users`)
       .then(response => {
         store.Library.users = response.data;
